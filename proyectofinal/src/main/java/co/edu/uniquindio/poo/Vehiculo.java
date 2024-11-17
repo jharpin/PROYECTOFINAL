@@ -16,6 +16,9 @@ public abstract class Vehiculo {
         this.transmision = transmision;
         this.tipoCombustible = tipoCombustible;
     }
+    public String Estado() {
+        return nuevo ? "Sí" : "No";
+    }
 
     public abstract boolean revisionTecnica();
 
