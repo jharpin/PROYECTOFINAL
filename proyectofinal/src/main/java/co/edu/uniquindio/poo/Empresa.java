@@ -11,7 +11,7 @@ public class Empresa {
     private List<Usuario> listaUsuarios = new ArrayList<>();
     private List<Cliente> listaClientes = new ArrayList<>();
     private List<Vehiculo> listaVehiculos = new ArrayList<>();
-    private List<Reportes> listaReportes = new ArrayList<>();
+    private List<Reporte> listaReportes = new ArrayList<>();
     private List<Venta> listaVentas = new ArrayList<>();
     private List<Alquiler> listaAlquileres = new ArrayList<>();
     private static Empresa instancia;
@@ -145,11 +145,11 @@ public class Empresa {
         this.listaUsuarios = listaUsuarios;
     }
 
-    public List<Reportes> getListaReportes() {
+    public List<Reporte> getListaReportes() {
         return listaReportes;
     }
 
-    public void setListaReportes(List<Reportes> listaReportes) {
+    public void setListaReportes(List<Reporte> listaReportes) {
         this.listaReportes = listaReportes;
     }
 
