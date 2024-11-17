@@ -19,12 +19,27 @@ public class Empresa {
     }
 
     // Métodos para agregar elementos
-    public void agregarCliente(Cliente cliente) {
-        clientes.add(cliente);
+    public boolean agregarCliente(Cliente cliente) {
+        if (!clientes.contains(cliente)) { // Verifica que no esté en la lista
+            clientes.add(cliente);
+            return true; // Cliente agregado exitosamente
+        }
+        return false; // Cliente ya existe
     }
 
-    public void agregarEmpleado(Empleado empleado) {
-        empleados.add(empleado);
+    public boolean agregarEmpleado(Empleado empleado) {
+        if (!empleados.contains(empleado)) { // Verifica que no esté en la lista
+            empleados.add(empleado);
+            return true; // Empleado agregado exitosamente
+        }
+        return false; // Empleado ya existe
+    }
+    public boolean agregarAdministrador(Empleado administrador) {
+        if (!empleados.contains(administrador)) { // Verifica que no esté en la lista
+            empleados.add(administrador);
+            return true; // Administrador agregado exitosamente
+        }
+        return false; // Administrador ya existe
     }
 
     public void agregarVehiculo(Vehiculo vehiculo) {
