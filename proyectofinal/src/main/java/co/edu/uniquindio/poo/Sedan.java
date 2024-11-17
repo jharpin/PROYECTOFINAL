@@ -150,7 +150,7 @@ public class Sedan extends Vehiculo {
 
     @Override
     public String toString() {
-        return "Sedan [numeroPasajeros=" + numeroPasajeros + ", numeroPuertas=" + numeroPuertas + ", capacidadMaletero="
+        return  super.toString()+"Sedan [numeroPasajeros=" + numeroPasajeros + ", numeroPuertas=" + numeroPuertas + ", capacidadMaletero="
                 + capacidadMaletero + ", aireAcondicionado=" + aireAcondicionado + ", camaraReversa=" + camaraReversa
                 + ", velocidadCrucero=" + velocidadCrucero + ", bolsasDeAire=" + bolsasDeAire + ", ABS=" + ABS
                 + ", sensoresColision=" + sensoresColision + ", sensorTraficoCruzado=" + sensorTraficoCruzado

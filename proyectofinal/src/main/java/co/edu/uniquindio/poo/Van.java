@@ -88,7 +88,7 @@ public class Van extends Vehiculo {
 
     @Override
     public String toString() {
-        return "Van [numeroPasajeros=" + numeroPasajeros + ", numeroPuertas=" + numeroPuertas + ", capacidadMaletero="
+        return  super.toString()+"Van [numeroPasajeros=" + numeroPasajeros + ", numeroPuertas=" + numeroPuertas + ", capacidadMaletero="
                 + capacidadMaletero + ", aireAcondicionado=" + aireAcondicionado + ", camaraReversa=" + camaraReversa
                 + ", bolsasDeAire=" + bolsasDeAire + ", ABS=" + ABS + "]";
     }

@@ -47,7 +47,7 @@ public class Moto extends Vehiculo {
 
     @Override
     public String toString() {
-        return "Moto [cilindraje=" + cilindraje + ", velocidadMaxima=" + velocidadMaxima + ", tipoMoto=" + tipoMoto
+        return  super.toString()+"Moto [cilindraje=" + cilindraje + ", velocidadMaxima=" + velocidadMaxima + ", tipoMoto=" + tipoMoto
                 + "]";
     }
 

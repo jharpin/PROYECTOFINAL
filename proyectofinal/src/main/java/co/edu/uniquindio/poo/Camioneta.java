@@ -139,7 +139,7 @@ public class Camioneta extends Vehiculo {
 
     @Override
     public String toString() {
-        return "Camioneta [numeroPasajeros=" + numeroPasajeros + ", numeroPuertas=" + numeroPuertas
+        return  super.toString()+"Camioneta [numeroPasajeros=" + numeroPasajeros + ", numeroPuertas=" + numeroPuertas
                 + ", capacidadMaletero=" + capacidadMaletero + ", aireAcondicionado=" + aireAcondicionado
                 + ", camaraReversa=" + camaraReversa + ", velocidadCrucero=" + velocidadCrucero + ", bolsasDeAire="
                 + bolsasDeAire + ", ABS=" + ABS + ", sensoresColision=" + sensoresColision + ", sensorTraficoCruzado="
