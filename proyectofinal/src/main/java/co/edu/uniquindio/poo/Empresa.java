@@ -7,6 +7,7 @@ public class Empresa {
     private String nombre;
     private List<Cliente> clientes;
     private List<Empleado> empleados;
+    private List<Administrador> administradores;
     private List<Vehiculo> vehiculos;
     private List<Transaccion> transacciones;
 
@@ -19,27 +20,27 @@ public class Empresa {
     }
 
     // Métodos para agregar elementos
-    public boolean agregarCliente(Cliente cliente) {
+    public void agregarCliente(Cliente cliente) {
         if (!clientes.contains(cliente)) { // Verifica que no esté en la lista
             clientes.add(cliente);
-            return true; // Cliente agregado exitosamente
+             // Cliente agregado exitosamente
         }
-        return false; // Cliente ya existe
+         // Cliente ya existe
     }
 
-    public boolean agregarEmpleado(Empleado empleado) {
+    public void agregarEmpleado(Empleado empleado) {
         if (!empleados.contains(empleado)) { // Verifica que no esté en la lista
             empleados.add(empleado);
-            return true; // Empleado agregado exitosamente
+             // Empleado agregado exitosamente
         }
-        return false; // Empleado ya existe
+         // Empleado ya existe
     }
-    public boolean agregarAdministrador(Empleado administrador) {
-        if (!empleados.contains(administrador)) { // Verifica que no esté en la lista
-            empleados.add(administrador);
-            return true; // Administrador agregado exitosamente
+    public void agregarAdministrador(Administrador administrador) {
+        if (!administradores.contains(administrador)) { // Verifica que no esté en la lista
+            administradores.add(administrador);
+            // Administrador agregado exitosamente
         }
-        return false; // Administrador ya existe
+        // Administrador ya existe
     }
 
     public void agregarVehiculo(Vehiculo vehiculo) {
