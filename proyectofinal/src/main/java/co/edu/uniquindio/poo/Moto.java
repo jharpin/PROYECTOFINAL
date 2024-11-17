@@ -3,15 +3,16 @@ package co.edu.uniquindio.poo;
 public class Moto extends Vehiculo {
     private int cilindraje;
     private int velocidadMaxima;
-    private TipoMoto tipoMoto;
+    
+    
 
     // Constructor
-    public Moto(String marca, int modelo, boolean nuevo, String transmision, String tipoCombustible,
-                int cilindraje, int velocidadMaxima, TipoMoto tipoMoto) {
+    public Moto(String marca, int modelo, boolean nuevo,Transmision transmision, String tipoCombustible,
+                int cilindraje, int velocidadMaxima) {
         super(marca, modelo, nuevo, transmision, tipoCombustible);
         this.cilindraje = cilindraje;
         this.velocidadMaxima = velocidadMaxima;
-        this.tipoMoto = tipoMoto;
+       
     }
     @Override
     public boolean revisionTecnica() {
@@ -37,17 +38,11 @@ public class Moto extends Vehiculo {
         this.velocidadMaxima = velocidadMaxima;
     }
 
-    public TipoMoto getTipoMoto() {
-        return tipoMoto;
-    }
-
-    public void setTipoMoto(TipoMoto tipoMoto) {
-        this.tipoMoto = tipoMoto;
-    }
+   
 
     @Override
     public String toString() {
-        return  super.toString()+"Moto [cilindraje=" + cilindraje + ", velocidadMaxima=" + velocidadMaxima + ", tipoMoto=" + tipoMoto
+        return  super.toString()+"Moto [cilindraje=" + cilindraje + ", velocidadMaxima=" + velocidadMaxima + ", tipoMoto=" 
                 + "]";
     }
 

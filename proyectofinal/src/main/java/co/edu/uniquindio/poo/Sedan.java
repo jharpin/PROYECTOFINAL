@@ -14,7 +14,7 @@ public class Sedan extends Vehiculo {
     private boolean asistentePermanenciaCarril;
 
     // Constructor
-    public Sedan(String marca, int modelo, boolean nuevo, String transmision, String tipoCombustible,
+    public Sedan(String marca, int modelo, boolean nuevo, Transmision transmision, String tipoCombustible,
                  int numeroPasajeros, int numeroPuertas, int capacidadMaletero, boolean aireAcondicionado,
                  boolean camaraReversa, boolean velocidadCrucero, int bolsasDeAire, boolean ABS,
                  boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenciaCarril) {

@@ -11,7 +11,7 @@ public class PickUp extends Vehiculo {
     private int capacidadCajaCarga;
 
     // Constructor
-    public PickUp(String marca, int modelo, boolean nuevo, String transmision, String tipoCombustible,
+    public PickUp(String marca, int modelo, boolean nuevo, Transmision transmision, String tipoCombustible,
                   int numeroPasajeros, int numeroPuertas, boolean aireAcondicionado, boolean camaraReversa,
                   int bolsasDeAire, boolean ABS, boolean traccion4x4, int capacidadCajaCarga) {
         super(marca, modelo, nuevo, transmision, tipoCombustible);

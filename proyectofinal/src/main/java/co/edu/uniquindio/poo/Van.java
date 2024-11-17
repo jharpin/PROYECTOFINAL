@@ -10,7 +10,7 @@ public class Van extends Vehiculo {
     private boolean ABS;
 
     // Constructor
-    public Van(String marca, int modelo, boolean nuevo, String transmision, String tipoCombustible,
+    public Van(String marca, int modelo, boolean nuevo, Transmision transmision, String tipoCombustible,
                int numeroPasajeros, int numeroPuertas, int capacidadMaletero, boolean aireAcondicionado,
                boolean camaraReversa, int bolsasDeAire, boolean ABS) {
         super(marca, modelo, nuevo, transmision, tipoCombustible);

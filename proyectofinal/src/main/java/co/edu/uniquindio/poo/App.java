@@ -10,7 +10,10 @@ public class App {
 
                 Empleado empleado = new Empleado("Juan Pérez", 12345, "Calle Falsa 123", "123456789", "Vendedor");
                 Cliente cliente = new Cliente("Ana López", 67890, "Avenida Real 456", "987654321", "ana@email.com");
-                Vehiculo vehiculo = new Vehiculo("Toyota", 2022, true, "Automática", "venta") {
+                Vehiculo vehiculo = new Sedan("marquillos", 2090, false,Transmision.AUTOMATICA, TipoCombustible.ELECTRICO, 2, 2, 2, false, false, false, 3, false, false, false, false)
+
+        
+                Vehiculo vehiculo2 = new Moto("yamaha", 2021, false, , , 0, 0, null){
                     @Override
                     public boolean revisionTecnica() {
                         return true; // Implementación de revisión técnica para vehículos concretos

@@ -9,7 +9,7 @@ public class Camion extends Vehiculo {
     private TipoCamion tipoCamion;
 
     // Constructor
-    public Camion(String marca, int modelo, boolean nuevo, String transmision, String tipoCombustible,
+    public Camion(String marca, int modelo, boolean nuevo, Transmision transmision, String tipoCombustible,
                   int capacidadCarga, boolean aireAcondicionado, boolean frenosDeAire, boolean ABS,
                   int numeroEjes, TipoCamion tipoCamion) {
         super(marca, modelo, nuevo, transmision, tipoCombustible);
