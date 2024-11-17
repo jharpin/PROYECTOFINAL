@@ -8,9 +8,9 @@ public class Deportivo extends Vehiculo {
     private double tiempo0a100kmh;
 
     // Constructor
-    public Deportivo(String marca, int modelo, boolean nuevo, String transmision, TipoCombustible tipoCombustible,
-                     int numeroPasajeros, int numeroPuertas, int bolsasDeAire, int caballosDeFuerza, double tiempo0a100kmh,Combustible combustible) {
-        super(marca, modelo, nuevo, transmision, tipoCombustible,combustible);
+    public Deportivo(String marca, int modelo, boolean nuevo, String transmision, String tipoCombustible,
+                     int numeroPasajeros, int numeroPuertas, int bolsasDeAire, int caballosDeFuerza, double tiempo0a100kmh) {
+        super(marca, modelo, nuevo, transmision, tipoCombustible);
         this.numeroPasajeros = numeroPasajeros;
         this.numeroPuertas = numeroPuertas;
         this.bolsasDeAire = bolsasDeAire;

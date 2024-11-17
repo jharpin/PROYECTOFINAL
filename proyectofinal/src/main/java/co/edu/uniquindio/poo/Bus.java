@@ -12,10 +12,10 @@ public class Bus extends Vehiculo {
     private int salidasEmergencia;
 
     // Constructor
-    public Bus(String marca, int modelo, boolean nuevo, String transmision, TipoCombustible tipoCombustible,
+    public Bus(String marca, int modelo, boolean nuevo, String transmision, String tipoCombustible,
                int numeroPasajeros, int numeroPuertas, int capacidadMaletero, boolean aireAcondicionado,
-               boolean camaraReversa, int bolsasDeAire, boolean ABS, int numeroEjes, int salidasEmergencia,Combustible combustible) {
-        super(marca, modelo, nuevo, transmision, tipoCombustible,combustible);
+               boolean camaraReversa, int bolsasDeAire, boolean ABS, int numeroEjes, int salidasEmergencia) {
+        super(marca, modelo, nuevo, transmision, tipoCombustible);
         this.numeroPasajeros = numeroPasajeros;
         this.numeroPuertas = numeroPuertas;
         this.capacidadMaletero = capacidadMaletero;

@@ -5,17 +5,16 @@ public abstract class Vehiculo {
     private int modelo;
     private boolean nuevo;
     private String transmision;
-    private TipoCombustible tipoCombustible;
+    private String tipoCombustible;
     private Combustible combustible;
 
     // Constructor
-    public Vehiculo(String marca, int modelo, boolean nuevo, String transmision, TipoCombustible tipoCombustible,Combustible combustible) {
+    public Vehiculo(String marca, int modelo, boolean nuevo, String transmision, String tipoCombustible) {
         this.marca = marca;
         this.modelo = modelo;
         this.nuevo = nuevo;
         this.transmision = transmision;
         this.tipoCombustible = tipoCombustible;
-        this.combustible=combustible;
     }
 
     public abstract boolean revisionTecnica();
@@ -53,7 +52,14 @@ public abstract class Vehiculo {
         this.transmision = transmision;
     }
 
-    
+    public String getTipoCombustible() {
+        return tipoCombustible;
+    }
+
+    public void setTipoCombustible(String tipoCombustible) {
+        this.tipoCombustible = tipoCombustible;
+    }
+
     public Combustible getCombustible() {
         return combustible;
     }
@@ -66,14 +72,6 @@ public abstract class Vehiculo {
     public String toString() {
         return "Vehiculo [marca=" + marca + ", modelo=" + modelo + ", nuevo=" + nuevo + ", transmision=" + transmision
                 + ", tipoCombustible=" + tipoCombustible + ", combustible=" + combustible + "]";
-    }
-
-    public TipoCombustible getTipoCombustible() {
-        return tipoCombustible;
-    }
-
-    public void setTipoCombustible(TipoCombustible tipoCombustible) {
-        this.tipoCombustible = tipoCombustible;
     }
     
 

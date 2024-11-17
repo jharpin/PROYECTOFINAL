@@ -9,10 +9,10 @@ public class Camion extends Vehiculo {
     private TipoCamion tipoCamion;
 
     // Constructor
-    public Camion(String marca, int modelo, boolean nuevo, String transmision,TipoCombustible tipoCombustible,
+    public Camion(String marca, int modelo, boolean nuevo, String transmision, String tipoCombustible,
                   int capacidadCarga, boolean aireAcondicionado, boolean frenosDeAire, boolean ABS,
-                  int numeroEjes, TipoCamion tipoCamion,Combustible combustible) {
-        super(marca, modelo, nuevo, transmision, tipoCombustible,combustible);
+                  int numeroEjes, TipoCamion tipoCamion) {
+        super(marca, modelo, nuevo, transmision, tipoCombustible);
         this.capacidadCarga = capacidadCarga;
         this.aireAcondicionado = aireAcondicionado;
         this.frenosDeAire = frenosDeAire;

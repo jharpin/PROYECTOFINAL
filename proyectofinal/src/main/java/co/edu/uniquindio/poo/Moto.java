@@ -6,9 +6,9 @@ public class Moto extends Vehiculo {
     private TipoMoto tipoMoto;
 
     // Constructor
-    public Moto(String marca, int modelo, boolean nuevo, String transmision, TipoCombustible tipoCombustible,
-                int cilindraje, int velocidadMaxima, TipoMoto tipoMoto,Combustible combustible) {
-        super(marca, modelo, nuevo, transmision, tipoCombustible,combustible);
+    public Moto(String marca, int modelo, boolean nuevo, String transmision, String tipoCombustible,
+                int cilindraje, int velocidadMaxima, TipoMoto tipoMoto) {
+        super(marca, modelo, nuevo, transmision, tipoCombustible);
         this.cilindraje = cilindraje;
         this.velocidadMaxima = velocidadMaxima;
         this.tipoMoto = tipoMoto;
