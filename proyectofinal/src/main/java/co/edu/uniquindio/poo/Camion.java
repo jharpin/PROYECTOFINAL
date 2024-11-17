@@ -72,7 +72,7 @@ public class Camion extends Vehiculo {
 
     @Override
     public String toString() {
-        return "Camion{" +
+        return  super.toString()+"Camion{" +
                 "marca='" + getMarca() + '\'' +
                 ", modelo=" + getModelo() +
                 ", nuevo=" + isNuevo() +
