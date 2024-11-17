@@ -163,4 +163,5 @@ public class App {
         long dias = java.time.temporal.ChronoUnit.DAYS.between(alquiler.getFechaInicio(), alquiler.getFechaFin());
         return alquiler.getPrecioPorDia() * dias;
     }
+    
 }

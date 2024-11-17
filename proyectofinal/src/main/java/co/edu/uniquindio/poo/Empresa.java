@@ -32,7 +32,47 @@ public class Empresa {
         }
         return null;
     }
+    
+    public boolean bloquearUsuario(String nombreUsuario) {
+        Usuario usuario = listaUsuarios.stream()
+            .filter(u -> u.getNombreUsuario().equals(nombreUsuario))
+            .findFirst()
+            .orElseThrow(() -> new IllegalArgumentException("Usuario no encontrado: " + nombreUsuario));
+    
+        usuario.setBloqueado(true);
+        return true;
+    }
+    
+    public boolean desbloquearUsuario(String nombreUsuario) {
+        Usuario usuario = listaUsuarios.stream()
+            .filter(u -> u.getNombreUsuario().equals(nombreUsuario))
+            .findFirst()
+            .orElseThrow(() -> new IllegalArgumentException("Usuario no encontrado: " + nombreUsuario));
+    
+        usuario.setBloqueado(false);
+        return true;
+    }
 
+    public boolean verificarBloqueo(String nombreUsuario) {
+        return listaUsuarios.stream()
+            .filter(u -> u.getNombreUsuario().equals(nombreUsuario))
+            .findFirst()
+            .map(Usuario::isBloqueado)
+            .orElse(false); // Devuelve false si no se encuentra el usuario
+    }
+
+    public String recuperarContrasena(String nombreUsuario, String palabraSecreta) {
+        Usuario usuario = listaUsuarios.stream()
+            .filter(u -> u.getNombreUsuario().equals(nombreUsuario))
+            .findFirst()
+            .orElseThrow(() -> new IllegalArgumentException("Usuario no encontrado: " + nombreUsuario));
+    
+        if (!usuario.getPalabraSecreta().equalsIgnoreCase(palabraSecreta)) {
+            throw new IllegalArgumentException("La palabra secreta no coincide.");
+        }
+    
+        return usuario.getContrasena();
+    }
     public Empleado obtenerEmpleado(String cedula) {
         Empleado empleado = null;
         for(Empleado empleado1 : listaEmpleados) {
