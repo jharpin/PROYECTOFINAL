@@ -10,10 +10,10 @@ public class Van extends Vehiculo {
     private boolean ABS;
 
     // Constructor
-    public Van(String marca, int modelo, boolean nuevo, String transmision, String tipoCombustible,
+    public Van(String marca, int modelo, boolean nuevo, String transmision,TipoCombustible tipoCombustible,
                int numeroPasajeros, int numeroPuertas, int capacidadMaletero, boolean aireAcondicionado,
-               boolean camaraReversa, int bolsasDeAire, boolean ABS) {
-        super(marca, modelo, nuevo, transmision, tipoCombustible);
+               boolean camaraReversa, int bolsasDeAire, boolean ABS,Combustible combustible) {
+        super(marca, modelo, nuevo, transmision, tipoCombustible,combustible);
         this.numeroPasajeros = numeroPasajeros;
         this.numeroPuertas = numeroPuertas;
         this.capacidadMaletero = capacidadMaletero;

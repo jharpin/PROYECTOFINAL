@@ -19,8 +19,8 @@ public class Camioneta extends Vehiculo {
                      int numeroPasajeros, int numeroPuertas, int capacidadMaletero, boolean aireAcondicionado,
                      boolean camaraReversa, boolean velocidadCrucero, int bolsasDeAire, boolean ABS,
                      boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenciaCarril,
-                     boolean traccion4x4) {
-        super(marca, modelo, nuevo, transmision, tipoCombustible);
+                     boolean traccion4x4,Combustible combustible) {
+        super(marca, modelo, nuevo, transmision, tipoCombustible,combustible);
         this.numeroPasajeros = numeroPasajeros;
         this.numeroPuertas = numeroPuertas;
         this.capacidadMaletero = capacidadMaletero;

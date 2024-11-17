@@ -11,10 +11,10 @@ public class PickUp extends Vehiculo {
     private int capacidadCajaCarga;
 
     // Constructor
-    public PickUp(String marca, int modelo, boolean nuevo, String transmision, String tipoCombustible,
+    public PickUp(String marca, int modelo, boolean nuevo, String transmision, TipoCombustible tipoCombustible,
                   int numeroPasajeros, int numeroPuertas, boolean aireAcondicionado, boolean camaraReversa,
-                  int bolsasDeAire, boolean ABS, boolean traccion4x4, int capacidadCajaCarga) {
-        super(marca, modelo, nuevo, transmision, tipoCombustible);
+                  int bolsasDeAire, boolean ABS, boolean traccion4x4, int capacidadCajaCarga,Combustible combustible) {
+        super(marca, modelo, nuevo, transmision, tipoCombustible,combustible);
         this.numeroPasajeros = numeroPasajeros;
         this.numeroPuertas = numeroPuertas;
         this.aireAcondicionado = aireAcondicionado;
