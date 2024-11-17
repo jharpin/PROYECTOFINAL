@@ -17,6 +17,12 @@ public class Deportivo extends Vehiculo {
         this.caballosDeFuerza = caballosDeFuerza;
         this.tiempo0a100kmh = tiempo0a100kmh;
     }
+    @Override
+    public boolean revisionTecnica() {
+       
+        System.out.println("Revisión técnica realizada para el deportivo.");
+        return true; // Por ejemplo: devuelve true si la camioneta pasa la revisión
+    }
 
     // Métodos getters y setters
     public int getNumeroPasajeros() {

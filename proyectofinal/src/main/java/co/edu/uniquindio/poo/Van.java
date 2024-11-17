@@ -22,6 +22,12 @@ public class Van extends Vehiculo {
         this.bolsasDeAire = bolsasDeAire;
         this.ABS = ABS;
     }
+    @Override
+    public boolean revisionTecnica() {
+       
+        System.out.println("Revisión técnica realizada para la van.");
+        return true; // Por ejemplo: devuelve true si la camioneta pasa la revisión
+    }
 
     // Métodos getters y setters
     public int getNumeroPasajeros() {

@@ -26,6 +26,18 @@ public class Bus extends Vehiculo {
         this.numeroEjes = numeroEjes;
         this.salidasEmergencia = salidasEmergencia;
     }
+    @Override
+    public boolean revisionTecnica() {
+       
+        System.out.println("Revisión técnica realizada para el bus.");
+        return true; // Por ejemplo: devuelve true si la camioneta pasa la revisión
+    }
+       
+
+       
+
+       
+
 
     // Métodos getters y setters
     public int getNumeroPasajeros() {
