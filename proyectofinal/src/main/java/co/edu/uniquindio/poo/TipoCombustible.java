@@ -2,7 +2,9 @@ package co.edu.uniquindio.poo;
 
 public enum TipoCombustible {
     GASOLINA,
-    DISEL,
+    DIESEL,
     ELECTRICO,
-    HIBRIDO
+    HIBRIDO_ENCHUFABLE,
+    HIBRIDO_NO_ENCHUFABLE,
+    HIBRIDO_LIGERO;
 }

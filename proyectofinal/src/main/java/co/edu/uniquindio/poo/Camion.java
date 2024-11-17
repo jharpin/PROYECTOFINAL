@@ -6,7 +6,8 @@ public class Camion extends Vehiculo {
     private boolean frenosDeAire;
     private boolean ABS;
     private int numeroEjes;
-    private String tipoCamion;
+    private String  TipoCamion;
+
 
     // Constructor
     public Camion(String marca, int modelo, boolean nuevo, String transmision, String tipoCombustible,
@@ -18,7 +19,7 @@ public class Camion extends Vehiculo {
         this.frenosDeAire = frenosDeAire;
         this.ABS = ABS;
         this.numeroEjes = numeroEjes;
-        this.tipoCamion = tipoCamion;
+        this.TipoCamion = TipoCamion;
     }
 
     // Métodos getters y setters
@@ -63,10 +64,10 @@ public class Camion extends Vehiculo {
     }
 
     public String getTipoCamion() {
-        return tipoCamion;
+        return TipoCamion;
     }
 
     public void setTipoCamion(String tipoCamion) {
-        this.tipoCamion = tipoCamion;
+        this.TipoCamion = tipoCamion;
     }
 }
