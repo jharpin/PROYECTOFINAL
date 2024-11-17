@@ -1,78 +1,83 @@
 package co.edu.uniquindio.poo;
 
 public class Combustible {
-    private TipoCombustible tipoCombustible; // Enum TipoCombustible
+    private TipoCombustible tipo; // Enum para definir tipos de combustible
     private Integer autonomia; // Solo para eléctricos
     private Integer tiempoCarga; // Solo para eléctricos
     private Boolean enchufable; // Solo para híbridos
     private Boolean hibridoLigero; // Solo para híbridos
 
-    // Constructor para combustibles básicos
-    public Combustible(TipoCombustible tipoCombustible) {
-        if (tipoCombustible != TipoCombustible.GASOLINA && tipoCombustible != TipoCombustible.DIESEL) {
-            throw new IllegalArgumentException("El tipo debe ser 'Gasolina' o 'Diésel'.");
+    // Constructor para combustibles básicos (Gasolina y Diésel)
+    public Combustible(TipoCombustible tipo) {
+        if (tipo != TipoCombustible.GASOLINA && tipo != TipoCombustible.DIESEL) {
+            throw new IllegalArgumentException("El tipo debe ser 'GASOLINA' o 'DIESEL'.");
         }
-        this.tipoCombustible = tipoCombustible;
+        this.tipo = tipo;
+        this.autonomia = null;
+        this.tiempoCarga = null;
+        this.enchufable = null;
+        this.hibridoLigero = null;
     }
 
     // Constructor para eléctricos
-    public Combustible(TipoCombustible tipoCombustible, Integer autonomia, Integer tiempoCarga) {
-        if (tipoCombustible != TipoCombustible.ELECTRICO) {
-            throw new IllegalArgumentException("Autonomía y tiempo de carga solo aplican a 'Eléctrico'.");
+    public Combustible(TipoCombustible tipo, Integer autonomia, Integer tiempoCarga) {
+        if (tipo != TipoCombustible.ELECTRICO) {
+            throw new IllegalArgumentException("Autonomía y tiempo de carga solo aplican a 'ELECTRICO'.");
         }
-        this.tipoCombustible = tipoCombustible;
+        if (autonomia <= 0 || tiempoCarga <= 0) {
+            throw new IllegalArgumentException("Autonomía y tiempo de carga deben ser mayores a 0.");
+        }
+        this.tipo = tipo;
         this.autonomia = autonomia;
         this.tiempoCarga = tiempoCarga;
+        this.enchufable = null;
+        this.hibridoLigero = null;
     }
 
     // Constructor para híbridos
-    public Combustible(TipoCombustible tipoCombustible, Boolean enchufable, Boolean hibridoLigero) {
-        if (tipoCombustible != TipoCombustible.HIBRIDO) {
-            throw new IllegalArgumentException("Enchufable y híbrido ligero solo aplican a 'Híbrido'.");
+    public Combustible(TipoCombustible tipo, Boolean enchufable, Boolean hibridoLigero) {
+        if (tipo != TipoCombustible.HIBRIDO) {
+            throw new IllegalArgumentException("Enchufable y híbrido ligero solo aplican a 'HIBRIDO'.");
         }
-        this.tipoCombustible = tipoCombustible;
+        this.tipo = tipo;
         this.enchufable = enchufable;
-        this.hibridoLigero = hibridoLigero;
+        this.hibridoLigero = !enchufable && hibridoLigero; // Solo puede ser híbrido ligero si no es enchufable
+        this.autonomia = null;
+        this.tiempoCarga = null;
     }
 
-    // Getters y setters
-    public TipoCombustible getTipoCombustible() {
-        return tipoCombustible;
-    }
-
-    public void setTipoCombustible(TipoCombustible tipoCombustible) {
-        this.tipoCombustible = tipoCombustible;
+    // Getters
+    public TipoCombustible getTipo() {
+        return tipo;
     }
 
     public Integer getAutonomia() {
         return autonomia;
     }
 
-    public void setAutonomia(Integer autonomia) {
-        this.autonomia = autonomia;
-    }
-
     public Integer getTiempoCarga() {
         return tiempoCarga;
-    }
-
-    public void setTiempoCarga(Integer tiempoCarga) {
-        this.tiempoCarga = tiempoCarga;
     }
 
     public Boolean getEnchufable() {
         return enchufable;
     }
 
-    public void setEnchufable(Boolean enchufable) {
-        this.enchufable = enchufable;
-    }
-
     public Boolean getHibridoLigero() {
         return hibridoLigero;
     }
 
-    public void setHibridoLigero(Boolean hibridoLigero) {
-        this.hibridoLigero = hibridoLigero;
+    // Método toString para mostrar detalles del combustible
+    @Override
+    public String toString() {
+        StringBuilder detalle = new StringBuilder("Tipo: " + tipo);
+        if (tipo == TipoCombustible.ELECTRICO) {
+            detalle.append(", Autonomía: ").append(autonomia).append(" km");
+            detalle.append(", Tiempo de carga: ").append(tiempoCarga).append(" horas");
+        } else if (tipo == TipoCombustible.HIBRIDO) {
+            detalle.append(", ¿Enchufable?: ").append(enchufable);
+            detalle.append(", ¿Híbrido ligero?: ").append(hibridoLigero);
+        }
+        return detalle.toString();
     }
 }
