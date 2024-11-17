@@ -17,6 +17,8 @@ public abstract class Vehiculo {
         this.tipoCombustible = tipoCombustible;
     }
 
+    public abstract boolean revisionTecnica();
+
     // Métodos getters y setters
     public String getMarca() {
         return marca;
