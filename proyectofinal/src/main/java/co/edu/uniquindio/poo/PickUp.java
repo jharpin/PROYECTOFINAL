@@ -1,6 +1,6 @@
 package co.edu.uniquindio.poo;
 
-public class Pickup extends Vehiculo {
+public class PickUp extends Vehiculo {
     private int numeroPasajeros;
     private int numeroPuertas;
     private boolean aireAcondicionado;
@@ -10,7 +10,7 @@ public class Pickup extends Vehiculo {
     private boolean esCuatroPorCuatro;
     private double capacidadCajaCarga;
 
-    public Pickup(String marca, String estado, String modelo, String placa, int cambios, double velocidadMaxima, double cilindraje, String combustible, boolean transmisionAutomatica, int numeroPasajeros, int numeroPuertas, boolean aireAcondicionado, boolean camaraReversa, int numeroBolsasAire, boolean abs, boolean esCuatroPorCuatro, double capacidadCajaCarga) {
+    public PickUp(String marca, String estado, String modelo, String placa, int cambios, double velocidadMaxima, double cilindraje, String combustible, boolean transmisionAutomatica, int numeroPasajeros, int numeroPuertas, boolean aireAcondicionado, boolean camaraReversa, int numeroBolsasAire, boolean abs, boolean esCuatroPorCuatro, double capacidadCajaCarga) {
         super(marca, estado, modelo, placa, cambios, velocidadMaxima, cilindraje, combustible, transmisionAutomatica);
         this.numeroPasajeros = numeroPasajeros;
         this.numeroPuertas = numeroPuertas;
@@ -22,7 +22,7 @@ public class Pickup extends Vehiculo {
         this.capacidadCajaCarga = capacidadCajaCarga;
     }
 
-    public Pickup() {
+    public PickUp() {
 
     }
 

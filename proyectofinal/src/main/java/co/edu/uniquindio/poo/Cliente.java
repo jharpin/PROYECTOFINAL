@@ -3,7 +3,7 @@ package co.edu.uniquindio.poo;
 public class Cliente extends Persona{
 
     public Cliente(){
-        super();
+        
     }
 
     public Cliente(int id, String nombre, String apellido, String cedula, int edad, String correo, String telefono, String rol,Usuario usuario) {
