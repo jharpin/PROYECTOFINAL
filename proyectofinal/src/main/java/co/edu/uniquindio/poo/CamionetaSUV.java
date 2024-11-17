@@ -1,46 +1,38 @@
 package co.edu.uniquindio.poo;
-
-public class Camioneta extends Vehiculo {
+public class CamionetaSUV extends Vehiculo {
     private int numeroPasajeros;
     private int numeroPuertas;
-    private int capacidadMaletero;
+    private double capacidadMaletero;
     private boolean aireAcondicionado;
     private boolean camaraReversa;
     private boolean velocidadCrucero;
-    private int bolsasDeAire;
-    private boolean ABS;
+    private int numeroBolsasAire;
+    private boolean abs;
     private boolean sensoresColision;
     private boolean sensorTraficoCruzado;
     private boolean asistentePermanenciaCarril;
-    private boolean traccion4x4;
+    private boolean esCuatroPorCuatro;
 
-    // Constructor
-    public Camioneta(String marca, int modelo, boolean nuevo, Transmision transmision, String tipoCombustible,
-                     int numeroPasajeros, int numeroPuertas, int capacidadMaletero, boolean aireAcondicionado,
-                     boolean camaraReversa, boolean velocidadCrucero, int bolsasDeAire, boolean ABS,
-                     boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenciaCarril,
-                     boolean traccion4x4) {
-        super(marca, modelo, nuevo, transmision, tipoCombustible);
+    public CamionetaSUV(String marca, String estado, String modelo, String placa, int cambios, double velocidadMaxima, double cilindraje, String combustible, boolean transmisionAutomatica, int numeroPasajeros, int numeroPuertas, double capacidadMaletero, boolean aireAcondicionado, boolean camaraReversa, boolean velocidadCrucero, int numeroBolsasAire, boolean abs, boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenciaCarril, boolean esCuatroPorCuatro) {
+        super(marca, estado, modelo, placa, cambios, velocidadMaxima, cilindraje, combustible, transmisionAutomatica);
         this.numeroPasajeros = numeroPasajeros;
         this.numeroPuertas = numeroPuertas;
         this.capacidadMaletero = capacidadMaletero;
         this.aireAcondicionado = aireAcondicionado;
         this.camaraReversa = camaraReversa;
         this.velocidadCrucero = velocidadCrucero;
-        this.bolsasDeAire = bolsasDeAire;
-        this.ABS = ABS;
+        this.numeroBolsasAire = numeroBolsasAire;
+        this.abs = abs;
         this.sensoresColision = sensoresColision;
         this.sensorTraficoCruzado = sensorTraficoCruzado;
         this.asistentePermanenciaCarril = asistentePermanenciaCarril;
-        this.traccion4x4 = traccion4x4;
+        this.esCuatroPorCuatro = esCuatroPorCuatro;
     }
-    @Override
-    public boolean revisionTecnica() {
-       
-        System.out.println("Revisión técnica realizada para la camioneta.");
-        return true; // Por ejemplo: devuelve true si la camioneta pasa la revisión
+
+    public CamionetaSUV(){
+
     }
-    // Métodos getters y setters
+
     public int getNumeroPasajeros() {
         return numeroPasajeros;
     }
@@ -57,11 +49,11 @@ public class Camioneta extends Vehiculo {
         this.numeroPuertas = numeroPuertas;
     }
 
-    public int getCapacidadMaletero() {
+    public double getCapacidadMaletero() {
         return capacidadMaletero;
     }
 
-    public void setCapacidadMaletero(int capacidadMaletero) {
+    public void setCapacidadMaletero(double capacidadMaletero) {
         this.capacidadMaletero = capacidadMaletero;
     }
 
@@ -89,20 +81,20 @@ public class Camioneta extends Vehiculo {
         this.velocidadCrucero = velocidadCrucero;
     }
 
-    public int getBolsasDeAire() {
-        return bolsasDeAire;
+    public int getNumeroBolsasAire() {
+        return numeroBolsasAire;
     }
 
-    public void setBolsasDeAire(int bolsasDeAire) {
-        this.bolsasDeAire = bolsasDeAire;
+    public void setNumeroBolsasAire(int numeroBolsasAire) {
+        this.numeroBolsasAire = numeroBolsasAire;
     }
 
-    public boolean isABS() {
-        return ABS;
+    public boolean isAbs() {
+        return abs;
     }
 
-    public void setABS(boolean ABS) {
-        this.ABS = ABS;
+    public void setAbs(boolean abs) {
+        this.abs = abs;
     }
 
     public boolean isSensoresColision() {
@@ -129,24 +121,29 @@ public class Camioneta extends Vehiculo {
         this.asistentePermanenciaCarril = asistentePermanenciaCarril;
     }
 
-    public boolean isTraccion4x4() {
-        return traccion4x4;
+    public boolean isEsCuatroPorCuatro() {
+        return esCuatroPorCuatro;
     }
 
-    public void setTraccion4x4(boolean traccion4x4) {
-        this.traccion4x4 = traccion4x4;
+    public void setEsCuatroPorCuatro(boolean esCuatroPorCuatro) {
+        this.esCuatroPorCuatro = esCuatroPorCuatro;
     }
 
     @Override
     public String toString() {
-        return  super.toString()+"Camioneta [numeroPasajeros=" + numeroPasajeros + ", numeroPuertas=" + numeroPuertas
-                + ", capacidadMaletero=" + capacidadMaletero + ", aireAcondicionado=" + aireAcondicionado
-                + ", camaraReversa=" + camaraReversa + ", velocidadCrucero=" + velocidadCrucero + ", bolsasDeAire="
-                + bolsasDeAire + ", ABS=" + ABS + ", sensoresColision=" + sensoresColision + ", sensorTraficoCruzado="
-                + sensorTraficoCruzado + ", asistentePermanenciaCarril=" + asistentePermanenciaCarril + ", traccion4x4="
-                + traccion4x4 + "]";
+        return "CamionetaSUV{" +
+                "numeroPasajeros=" + numeroPasajeros +
+                ", numeroPuertas=" + numeroPuertas +
+                ", capacidadMaletero=" + capacidadMaletero +
+                ", aireAcondicionado=" + aireAcondicionado +
+                ", camaraReversa=" + camaraReversa +
+                ", velocidadCrucero=" + velocidadCrucero +
+                ", numeroBolsasAire=" + numeroBolsasAire +
+                ", abs=" + abs +
+                ", sensoresColision=" + sensoresColision +
+                ", sensorTraficoCruzado=" + sensorTraficoCruzado +
+                ", asistentePermanenciaCarril=" + asistentePermanenciaCarril +
+                ", esCuatroPorCuatro=" + esCuatroPorCuatro +
+                '}';
     }
-    
 }
-
-

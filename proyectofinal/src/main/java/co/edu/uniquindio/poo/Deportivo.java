@@ -3,28 +3,23 @@ package co.edu.uniquindio.poo;
 public class Deportivo extends Vehiculo {
     private int numeroPasajeros;
     private int numeroPuertas;
-    private int bolsasDeAire;
-    private int caballosDeFuerza;
-    private double tiempo0a100kmh;
+    private int numeroBolsasAire;
+    private double caballosFuerza;
+    private double tiempoCienKmh;
 
-    // Constructor
-    public Deportivo(String marca, int modelo, boolean nuevo, Transmision transmision, String tipoCombustible,
-                     int numeroPasajeros, int numeroPuertas, int bolsasDeAire, int caballosDeFuerza, double tiempo0a100kmh) {
-        super(marca, modelo, nuevo, transmision, tipoCombustible);
+    public Deportivo(String marca, String estado, String modelo, String placa, int cambios, double velocidadMaxima, double cilindraje, String combustible, boolean transmisionAutomatica, int numeroPasajeros, int numeroPuertas, int numeroBolsasAire, double caballosFuerza, double tiempoCienKmh) {
+        super(marca, estado, modelo, placa, cambios, velocidadMaxima, cilindraje, combustible, transmisionAutomatica);
         this.numeroPasajeros = numeroPasajeros;
         this.numeroPuertas = numeroPuertas;
-        this.bolsasDeAire = bolsasDeAire;
-        this.caballosDeFuerza = caballosDeFuerza;
-        this.tiempo0a100kmh = tiempo0a100kmh;
-    }
-    @Override
-    public boolean revisionTecnica() {
-       
-        System.out.println("Revisión técnica realizada para el deportivo.");
-        return true; // Por ejemplo: devuelve true si la camioneta pasa la revisión
+        this.numeroBolsasAire = numeroBolsasAire;
+        this.caballosFuerza = caballosFuerza;
+        this.tiempoCienKmh = tiempoCienKmh;
     }
 
-    // Métodos getters y setters
+    public Deportivo(){
+
+    }
+
     public int getNumeroPasajeros() {
         return numeroPasajeros;
     }
@@ -41,34 +36,38 @@ public class Deportivo extends Vehiculo {
         this.numeroPuertas = numeroPuertas;
     }
 
-    public int getBolsasDeAire() {
-        return bolsasDeAire;
+    public int getNumeroBolsasAire() {
+        return numeroBolsasAire;
     }
 
-    public void setBolsasDeAire(int bolsasDeAire) {
-        this.bolsasDeAire = bolsasDeAire;
+    public void setNumeroBolsasAire(int numeroBolsasAire) {
+        this.numeroBolsasAire = numeroBolsasAire;
     }
 
-    public int getCaballosDeFuerza() {
-        return caballosDeFuerza;
+    public double getCaballosFuerza() {
+        return caballosFuerza;
     }
 
-    public void setCaballosDeFuerza(int caballosDeFuerza) {
-        this.caballosDeFuerza = caballosDeFuerza;
+    public void setCaballosFuerza(double caballosFuerza) {
+        this.caballosFuerza = caballosFuerza;
     }
 
-    public double getTiempo0a100kmh() {
-        return tiempo0a100kmh;
+    public double getTiempoCienKmh() {
+        return tiempoCienKmh;
     }
 
-    public void setTiempo0a100kmh(double tiempo0a100kmh) {
-        this.tiempo0a100kmh = tiempo0a100kmh;
+    public void setTiempoCienKmh(double tiempoCienKmh) {
+        this.tiempoCienKmh = tiempoCienKmh;
     }
 
     @Override
     public String toString() {
-        return  super.toString()+"Deportivo [numeroPasajeros=" + numeroPasajeros + ", numeroPuertas=" + numeroPuertas + ", bolsasDeAire="
-                + bolsasDeAire + ", caballosDeFuerza=" + caballosDeFuerza + ", tiempo0a100kmh=" + tiempo0a100kmh + "]";
+        return "Deportivo{" +
+                "numeroPasajeros=" + numeroPasajeros +
+                ", numeroPuertas=" + numeroPuertas +
+                ", numeroBolsasAire=" + numeroBolsasAire +
+                ", caballosFuerza=" + caballosFuerza +
+                ", tiempoCienKmh=" + tiempoCienKmh +
+                '}';
     }
-    
 }

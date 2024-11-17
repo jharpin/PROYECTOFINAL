@@ -1,44 +1,14 @@
 package co.edu.uniquindio.poo;
 
-import java.util.ArrayList;
-import java.util.List;
+public class Cliente extends Persona{
 
-public class Cliente extends Persona {
-    private String email;
-    private List<Transaccion> historialDeTransacciones;
-
-    // Constructor
-    public Cliente(String nombre, int identificacion, String direccion, String telefono, String email) {
-        super(nombre, identificacion, direccion, telefono);
-        this.email = email;
-        this.historialDeTransacciones = new ArrayList<>();
+    public Cliente(){
+        super();
     }
 
-    // Métodos
-    public void registrarTransaccion(Transaccion transaccion) {
-        historialDeTransacciones.add(transaccion);
-    }
+    public Cliente(int id, String nombre, String apellido, String cedula, int edad, String correo, String telefono, String rol,Usuario usuario) {
+        super(id, nombre, apellido, cedula, edad, correo, telefono, rol,usuario);
 
-    // Getters y setters
-    public String getEmail() {
-        return email;
     }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public List<Transaccion> getHistorialDeTransacciones() {
-        return historialDeTransacciones;
-    }
-
-    public void setHistorialDeTransacciones(List<Transaccion> historialDeTransacciones) {
-        this.historialDeTransacciones = historialDeTransacciones;
-    }
-
-    @Override
-    public String toString() {
-        return "Cliente [email=" + email + ", historialDeTransacciones=" + historialDeTransacciones + "]";
-    }
-    
 }
+

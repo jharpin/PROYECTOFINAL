@@ -3,33 +3,24 @@ package co.edu.uniquindio.poo;
 public class Van extends Vehiculo {
     private int numeroPasajeros;
     private int numeroPuertas;
-    private int capacidadMaletero;
+    private double capacidadMaletero;
     private boolean aireAcondicionado;
     private boolean camaraReversa;
-    private int bolsasDeAire;
-    private boolean ABS;
+    private int numeroBolsasAire;
+    private boolean abs;
 
-    // Constructor
-    public Van(String marca, int modelo, boolean nuevo, Transmision transmision, String tipoCombustible,
-               int numeroPasajeros, int numeroPuertas, int capacidadMaletero, boolean aireAcondicionado,
-               boolean camaraReversa, int bolsasDeAire, boolean ABS) {
-        super(marca, modelo, nuevo, transmision, tipoCombustible);
+    public Van(String marca, String estado, String modelo, String placa, int cambios, double velocidadMaxima, double cilindraje, String combustible, boolean transmisionAutomatica, int numeroPasajeros, int numeroPuertas,
+               double capacidadMaletero, boolean aireAcondicionado, boolean camaraReversa, int numeroBolsasAire, boolean abs) {
+        super(marca, estado, modelo, placa, cambios, velocidadMaxima, cilindraje, combustible, transmisionAutomatica);
         this.numeroPasajeros = numeroPasajeros;
         this.numeroPuertas = numeroPuertas;
         this.capacidadMaletero = capacidadMaletero;
         this.aireAcondicionado = aireAcondicionado;
         this.camaraReversa = camaraReversa;
-        this.bolsasDeAire = bolsasDeAire;
-        this.ABS = ABS;
-    }
-    @Override
-    public boolean revisionTecnica() {
-       
-        System.out.println("Revisión técnica realizada para la van.");
-        return true; // Por ejemplo: devuelve true si la camioneta pasa la revisión
+        this.numeroBolsasAire = numeroBolsasAire;
+        this.abs = abs;
     }
 
-    // Métodos getters y setters
     public int getNumeroPasajeros() {
         return numeroPasajeros;
     }
@@ -46,11 +37,11 @@ public class Van extends Vehiculo {
         this.numeroPuertas = numeroPuertas;
     }
 
-    public int getCapacidadMaletero() {
+    public double getCapacidadMaletero() {
         return capacidadMaletero;
     }
 
-    public void setCapacidadMaletero(int capacidadMaletero) {
+    public void setCapacidadMaletero(double capacidadMaletero) {
         this.capacidadMaletero = capacidadMaletero;
     }
 
@@ -70,29 +61,32 @@ public class Van extends Vehiculo {
         this.camaraReversa = camaraReversa;
     }
 
-    public int getBolsasDeAire() {
-        return bolsasDeAire;
+    public int getNumeroBolsasAire() {
+        return numeroBolsasAire;
     }
 
-    public void setBolsasDeAire(int bolsasDeAire) {
-        this.bolsasDeAire = bolsasDeAire;
+    public void setNumeroBolsasAire(int numeroBolsasAire) {
+        this.numeroBolsasAire = numeroBolsasAire;
     }
 
-    public boolean isABS() {
-        return ABS;
+    public boolean isAbs() {
+        return abs;
     }
 
-    public void setABS(boolean ABS) {
-        this.ABS = ABS;
+    public void setAbs(boolean abs) {
+        this.abs = abs;
     }
 
     @Override
     public String toString() {
-        return  super.toString()+"Van [numeroPasajeros=" + numeroPasajeros + ", numeroPuertas=" + numeroPuertas + ", capacidadMaletero="
-                + capacidadMaletero + ", aireAcondicionado=" + aireAcondicionado + ", camaraReversa=" + camaraReversa
-                + ", bolsasDeAire=" + bolsasDeAire + ", ABS=" + ABS + "]";
+        return "Van{" +
+                "numeroPasajeros=" + numeroPasajeros +
+                ", numeroPuertas=" + numeroPuertas +
+                ", capacidadMaletero=" + capacidadMaletero +
+                ", aireAcondicionado=" + aireAcondicionado +
+                ", camaraReversa=" + camaraReversa +
+                ", numeroBolsasAire=" + numeroBolsasAire +
+                ", abs=" + abs +
+                '}';
     }
-
-
-    
 }

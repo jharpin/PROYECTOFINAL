@@ -1,37 +1,31 @@
 package co.edu.uniquindio.poo;
 
-public class PickUp extends Vehiculo {
+public class Pickup extends Vehiculo {
     private int numeroPasajeros;
     private int numeroPuertas;
     private boolean aireAcondicionado;
     private boolean camaraReversa;
-    private int bolsasDeAire;
-    private boolean ABS;
-    private boolean traccion4x4;
-    private int capacidadCajaCarga;
+    private int numeroBolsasAire;
+    private boolean abs;
+    private boolean esCuatroPorCuatro;
+    private double capacidadCajaCarga;
 
-    // Constructor
-    public PickUp(String marca, int modelo, boolean nuevo, Transmision transmision, String tipoCombustible,
-                  int numeroPasajeros, int numeroPuertas, boolean aireAcondicionado, boolean camaraReversa,
-                  int bolsasDeAire, boolean ABS, boolean traccion4x4, int capacidadCajaCarga) {
-        super(marca, modelo, nuevo, transmision, tipoCombustible);
+    public Pickup(String marca, String estado, String modelo, String placa, int cambios, double velocidadMaxima, double cilindraje, String combustible, boolean transmisionAutomatica, int numeroPasajeros, int numeroPuertas, boolean aireAcondicionado, boolean camaraReversa, int numeroBolsasAire, boolean abs, boolean esCuatroPorCuatro, double capacidadCajaCarga) {
+        super(marca, estado, modelo, placa, cambios, velocidadMaxima, cilindraje, combustible, transmisionAutomatica);
         this.numeroPasajeros = numeroPasajeros;
         this.numeroPuertas = numeroPuertas;
         this.aireAcondicionado = aireAcondicionado;
         this.camaraReversa = camaraReversa;
-        this.bolsasDeAire = bolsasDeAire;
-        this.ABS = ABS;
-        this.traccion4x4 = traccion4x4;
+        this.numeroBolsasAire = numeroBolsasAire;
+        this.abs = abs;
+        this.esCuatroPorCuatro = esCuatroPorCuatro;
         this.capacidadCajaCarga = capacidadCajaCarga;
     }
-    @Override
-    public boolean revisionTecnica() {
-       
-        System.out.println("Revisión técnica realizada para el pickup.");
-        return true; // Por ejemplo: devuelve true si la camioneta pasa la revisión
+
+    public Pickup() {
+
     }
 
-    // Métodos getters y setters
     public int getNumeroPasajeros() {
         return numeroPasajeros;
     }
@@ -64,46 +58,49 @@ public class PickUp extends Vehiculo {
         this.camaraReversa = camaraReversa;
     }
 
-    public int getBolsasDeAire() {
-        return bolsasDeAire;
+    public int getNumeroBolsasAire() {
+        return numeroBolsasAire;
     }
 
-    public void setBolsasDeAire(int bolsasDeAire) {
-        this.bolsasDeAire = bolsasDeAire;
+    public void setNumeroBolsasAire(int numeroBolsasAire) {
+        this.numeroBolsasAire = numeroBolsasAire;
     }
 
-    public boolean isABS() {
-        return ABS;
+    public boolean isAbs() {
+        return abs;
     }
 
-    public void setABS(boolean ABS) {
-        this.ABS = ABS;
+    public void setAbs(boolean abs) {
+        this.abs = abs;
     }
 
-    public boolean isTraccion4x4() {
-        return traccion4x4;
+    public boolean isEsCuatroPorCuatro() {
+        return esCuatroPorCuatro;
     }
 
-    public void setTraccion4x4(boolean traccion4x4) {
-        this.traccion4x4 = traccion4x4;
+    public void setEsCuatroPorCuatro(boolean esCuatroPorCuatro) {
+        this.esCuatroPorCuatro = esCuatroPorCuatro;
     }
 
-    public int getCapacidadCajaCarga() {
+    public double getCapacidadCajaCarga() {
         return capacidadCajaCarga;
     }
 
-    public void setCapacidadCajaCarga(int capacidadCajaCarga) {
+    public void setCapacidadCajaCarga(double capacidadCajaCarga) {
         this.capacidadCajaCarga = capacidadCajaCarga;
     }
 
     @Override
     public String toString() {
-        return  super.toString()+"PickUp [numeroPasajeros=" + numeroPasajeros + ", numeroPuertas=" + numeroPuertas
-                + ", aireAcondicionado=" + aireAcondicionado + ", camaraReversa=" + camaraReversa + ", bolsasDeAire="
-                + bolsasDeAire + ", ABS=" + ABS + ", traccion4x4=" + traccion4x4 + ", capacidadCajaCarga="
-                + capacidadCajaCarga + "]";
+        return "Pickup{" +
+                "numeroPasajeros=" + numeroPasajeros +
+                ", numeroPuertas=" + numeroPuertas +
+                ", aireAcondicionado=" + aireAcondicionado +
+                ", camaraReversa=" + camaraReversa +
+                ", numeroBolsasAire=" + numeroBolsasAire +
+                ", abs=" + abs +
+                ", esCuatroPorCuatro=" + esCuatroPorCuatro +
+                ", capacidadCajaCarga=" + capacidadCajaCarga +
+                '}';
     }
-    
-
-    
 }
