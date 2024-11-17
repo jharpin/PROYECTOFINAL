@@ -163,5 +163,25 @@ public class App {
         long dias = java.time.temporal.ChronoUnit.DAYS.between(alquiler.getFechaInicio(), alquiler.getFechaFin());
         return alquiler.getPrecioPorDia() * dias;
     }
-    
+
+
+
+
+
+    // Bloquear un cliente por su cédula
+    boolean resultado = empresa.bloquearCliente("1070954321");
+    if (resultado) {
+        System.out.println("Cliente bloqueado exitosamente.");
+    } else {
+        System.out.println("No se encontró el cliente.");
+    }
+
+    // Desbloquear un cliente por su cédula
+    resultado = empresa.desbloquearCliente("1070954321");
+    if (resultado) {
+        System.out.println("Cliente desbloqueado exitosamente.");
+    } else {
+        System.out.println("No se encontró el cliente.");
+    }
+
 }
