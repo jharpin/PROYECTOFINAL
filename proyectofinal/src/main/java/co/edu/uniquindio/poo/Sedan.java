@@ -33,6 +33,27 @@ public class Sedan extends Vehiculo {
     }
 
     // Métodos getters y setters
+    public String tieneAireAcondicionado() {
+        return aireAcondicionado ? "Sí" : "No";
+    }
+    public String tieneCamaraReversa() {
+        return camaraReversa ? "Sí" : "No";
+    }
+    public String tieneVelocidadCrucero() {
+        return velocidadCrucero? "Sí" : "No";
+    }
+    public String tieneABS() {
+        return ABS? "Sí" : "No";
+    }
+    public String TieneSensoresColision() {
+        return sensoresColision? "Sí" : "No";
+    }
+    public String tieneSensorTraficoCruzado() {
+        return sensorTraficoCruzado? "Sí" : "No";
+    }
+    public String  asistentePermanenciaCarril() {
+        return  asistentePermanenciaCarril? "Sí" : "No";
+    }
     public int getNumeroPasajeros() {
         return numeroPasajeros;
     }
