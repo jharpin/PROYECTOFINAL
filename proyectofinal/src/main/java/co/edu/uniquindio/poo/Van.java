@@ -25,7 +25,7 @@ public class Van extends Vehiculo {
     @Override
     public boolean revisionTecnica() {
        
-        System.out.println("Revisión técnica realizada para la camioneta.");
+        System.out.println("Revisión técnica realizada para la van.");
         return true; // Por ejemplo: devuelve true si la camioneta pasa la revisión
     }
 
