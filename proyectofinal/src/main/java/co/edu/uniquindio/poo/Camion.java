@@ -20,6 +20,12 @@ public class Camion extends Vehiculo {
         this.numeroEjes = numeroEjes;
         this.tipoCamion = tipoCamion; // Corrección: usar el atributo tipoCamion correctamente
     }
+    @Override
+    public boolean revisionTecnica() {
+       
+        System.out.println("Revisión técnica realizada para la camioneta.");
+        return true; // Por ejemplo: devuelve true si la camioneta pasa la revisión
+    }
 
     // Métodos getters y setters
     public int getCapacidadCarga() {

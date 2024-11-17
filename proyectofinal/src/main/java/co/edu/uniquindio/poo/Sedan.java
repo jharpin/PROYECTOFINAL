@@ -31,6 +31,12 @@ public class Sedan extends Vehiculo {
         this.sensorTraficoCruzado = sensorTraficoCruzado;
         this.asistentePermanenciaCarril = asistentePermanenciaCarril;
     }
+    @Override
+    public boolean revisionTecnica() {
+       
+        System.out.println("Revisión técnica realizada para la camioneta.");
+        return true; // Por ejemplo: devuelve true si la camioneta pasa la revisión
+    }
 
     // Métodos getters y setters
     public String tieneAireAcondicionado() {
