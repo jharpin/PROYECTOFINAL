@@ -1,24 +1,14 @@
 package co.edu.uniquindio.poo;
 
-import java.util.List;
+public class Administrador extends Persona{
 
-public class Administrador extends Persona {
-    // Constructor
-    public Administrador(String nombre, int identificacion, String direccion, String telefono) {
-        super(nombre, identificacion, direccion, telefono);
+    public Administrador() {
+        super();
     }
 
-    // Métodos
-    public void gestionarEmpleados(Empleado empleado) {
-        // Lógica para gestionar empleados
+    public Administrador(int id, String nombre, String apellido, String cedula, int edad, String correo, String telefono, String rol, Usuario usuario) {
+        super(id, nombre, apellido, cedula, edad, correo, telefono, rol, usuario);
+
     }
 
-    public void generarReportes() {
-        // Lógica para generar reportes
-    }
-
-    public void bloquearCuenta(Empleado empleado) {
-        // Lógica para bloquear la cuenta de un empleado
-    }
 }
-

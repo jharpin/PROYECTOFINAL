@@ -2,24 +2,33 @@ package co.edu.uniquindio.poo;
 
 public abstract class Vehiculo {
     private String marca;
-    private int modelo;
-    private boolean nuevo;
-    private String transmision;
-    private String tipoCombustible;
-    private Combustible combustible;
+    private String estado;
+    private String modelo;
+    private String placa;
+    private int cambios;
+    private double velocidadMaxima;
+    private double cilindraje;
+    private String combustible;
+    private boolean transmisionAutomatica;
 
-    // Constructor
-    public Vehiculo(String marca, int modelo, boolean nuevo, String transmision, String tipoCombustible) {
+    public Vehiculo(String marca, String estado, String modelo, String placa,
+                    int cambios, double velocidadMaxima,
+                    double cilindraje, String combustible, boolean transmisionAutomatica) {
         this.marca = marca;
+        this.estado = estado;
         this.modelo = modelo;
-        this.nuevo = nuevo;
-        this.transmision = transmision;
-        this.tipoCombustible = tipoCombustible;
+        this.placa = placa;
+        this.cambios = cambios;
+        this.velocidadMaxima = velocidadMaxima;
+        this.cilindraje = cilindraje;
+        this.combustible = combustible;
+        this.transmisionAutomatica = transmisionAutomatica;
     }
 
-    public abstract boolean revisionTecnica();
+    public Vehiculo(){
 
-    // Métodos getters y setters
+    }
+
     public String getMarca() {
         return marca;
     }
@@ -28,53 +37,82 @@ public abstract class Vehiculo {
         this.marca = marca;
     }
 
-    public int getModelo() {
+    public String getEstado() {
+        return estado;
+    }
+
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public String getModelo() {
         return modelo;
     }
 
-    public void setModelo(int modelo) {
+    public void setModelo(String modelo) {
         this.modelo = modelo;
     }
 
-    public boolean isNuevo() {
-        return nuevo;
+    public int getCambios() {
+        return cambios;
     }
 
-    public void setNuevo(boolean nuevo) {
-        this.nuevo = nuevo;
+    public void setCambios(int cambios) {
+        this.cambios = cambios;
     }
 
-    public String getTransmision() {
-        return transmision;
+    public double getVelocidadMaxima() {
+        return velocidadMaxima;
     }
 
-    public void setTransmision(String transmision) {
-        this.transmision = transmision;
+    public void setVelocidadMaxima(double velocidadMaxima) {
+        this.velocidadMaxima = velocidadMaxima;
     }
 
-    public String getTipoCombustible() {
-        return tipoCombustible;
+    public double getCilindraje() {
+        return cilindraje;
     }
 
-    public void setTipoCombustible(String tipoCombustible) {
-        this.tipoCombustible = tipoCombustible;
+    public void setCilindraje(double cilindraje) {
+        this.cilindraje = cilindraje;
     }
 
-    public Combustible getCombustible() {
+    public String getCombustible() {
         return combustible;
     }
 
-    public void setCombustible(Combustible combustible) {
+    public void setCombustible(String combustible) {
         this.combustible = combustible;
+    }
+
+    public boolean isTransmisionAutomatica() {
+        return transmisionAutomatica;
+    }
+
+    public void setTransmisionAutomatica(boolean transmisionAutomatica) {
+        this.transmisionAutomatica = transmisionAutomatica;
     }
 
     @Override
     public String toString() {
-        return "Vehiculo [marca=" + marca + ", modelo=" + modelo + ", nuevo=" + nuevo + ", transmision=" + transmision
-                + ", tipoCombustible=" + tipoCombustible + ", combustible=" + combustible + "]";
+        return "Vehiculo{" +
+                "marca='" + marca + '\'' +
+                ", estado=" + estado +
+                ", modelo='" + modelo + '\'' +
+                ", cambios=" + cambios +
+                ", velocidadMaxima=" + velocidadMaxima +
+                ", cilindraje=" + cilindraje +
+                ", combustible='" + combustible + '\'' +
+                ", transmisionAutomatica=" + transmisionAutomatica +
+                '}';
     }
-    
-
-
-
 }
+
