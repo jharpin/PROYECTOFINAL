@@ -47,7 +47,5 @@ package co.edu.uniquindio.poo;
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
-}
- {
     
 }
