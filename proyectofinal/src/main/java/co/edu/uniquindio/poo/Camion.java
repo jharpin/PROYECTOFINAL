@@ -6,20 +6,19 @@ public class Camion extends Vehiculo {
     private boolean frenosDeAire;
     private boolean ABS;
     private int numeroEjes;
-    private String  TipoCamion;
-
+    private TipoCamion tipoCamion;
 
     // Constructor
     public Camion(String marca, int modelo, boolean nuevo, String transmision, String tipoCombustible,
                   int capacidadCarga, boolean aireAcondicionado, boolean frenosDeAire, boolean ABS,
-                  int numeroEjes, String tipoCamion) {
+                  int numeroEjes, TipoCamion tipoCamion) {
         super(marca, modelo, nuevo, transmision, tipoCombustible);
         this.capacidadCarga = capacidadCarga;
         this.aireAcondicionado = aireAcondicionado;
         this.frenosDeAire = frenosDeAire;
         this.ABS = ABS;
         this.numeroEjes = numeroEjes;
-        this.TipoCamion = TipoCamion;
+        this.tipoCamion = tipoCamion; // Corrección: usar el atributo tipoCamion correctamente
     }
 
     // Métodos getters y setters
@@ -63,11 +62,28 @@ public class Camion extends Vehiculo {
         this.numeroEjes = numeroEjes;
     }
 
-    public String getTipoCamion() {
-        return TipoCamion;
+    public TipoCamion getTipoCamion() {
+        return tipoCamion; // Corrección: devolver el objeto TipoCamion
     }
 
-    public void setTipoCamion(String tipoCamion) {
-        this.TipoCamion = tipoCamion;
+    public void setTipoCamion(TipoCamion tipoCamion) {
+        this.tipoCamion = tipoCamion; // Corrección: asignar correctamente el objeto TipoCamion
+    }
+
+    @Override
+    public String toString() {
+        return "Camion{" +
+                "marca='" + getMarca() + '\'' +
+                ", modelo=" + getModelo() +
+                ", nuevo=" + isNuevo() +
+                ", transmision='" + getTransmision() + '\'' +
+                ", tipoCombustible='" + getTipoCombustible() + '\'' +
+                ", capacidadCarga=" + capacidadCarga +
+                ", aireAcondicionado=" + aireAcondicionado +
+                ", frenosDeAire=" + frenosDeAire +
+                ", ABS=" + ABS +
+                ", numeroEjes=" + numeroEjes +
+                ", tipoCamion=" + tipoCamion + // Corrección: incluir el tipoCamion en el toString
+                '}';
     }
 }
