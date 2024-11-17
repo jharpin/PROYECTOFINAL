@@ -1,49 +1,47 @@
 package co.edu.uniquindio.poo;
 
-
-
 public class Combustible {
-    private String tipo; // 
+    private TipoCombustible tipoCombustible; // Enum TipoCombustible
     private Integer autonomia; // Solo para eléctricos
     private Integer tiempoCarga; // Solo para eléctricos
     private Boolean enchufable; // Solo para híbridos
     private Boolean hibridoLigero; // Solo para híbridos
 
     // Constructor para combustibles básicos
-    public Combustible(String tipo) {
-        if (!tipo.equalsIgnoreCase("Gasolina") && !tipo.equalsIgnoreCase("Diésel")) {
+    public Combustible(TipoCombustible tipoCombustible) {
+        if (tipoCombustible != TipoCombustible.GASOLINA && tipoCombustible != TipoCombustible.DIESEL) {
             throw new IllegalArgumentException("El tipo debe ser 'Gasolina' o 'Diésel'.");
         }
-        this.tipo = tipo;
+        this.tipoCombustible = tipoCombustible;
     }
 
     // Constructor para eléctricos
-    public Combustible(String tipo, Integer autonomia, Integer tiempoCarga) {
-        if (!tipo.equalsIgnoreCase("Eléctrico")) {
+    public Combustible(TipoCombustible tipoCombustible, Integer autonomia, Integer tiempoCarga) {
+        if (tipoCombustible != TipoCombustible.ELECTRICO) {
             throw new IllegalArgumentException("Autonomía y tiempo de carga solo aplican a 'Eléctrico'.");
         }
-        this.tipo = tipo;
+        this.tipoCombustible = tipoCombustible;
         this.autonomia = autonomia;
         this.tiempoCarga = tiempoCarga;
     }
 
     // Constructor para híbridos
-    public Combustible(String tipo, Boolean enchufable, Boolean hibridoLigero) {
-        if (!tipo.equalsIgnoreCase("Híbrido")) {
+    public Combustible(TipoCombustible tipoCombustible, Boolean enchufable, Boolean hibridoLigero) {
+        if (tipoCombustible != TipoCombustible.HIBRIDO) {
             throw new IllegalArgumentException("Enchufable y híbrido ligero solo aplican a 'Híbrido'.");
         }
-        this.tipo = tipo;
+        this.tipoCombustible = tipoCombustible;
         this.enchufable = enchufable;
         this.hibridoLigero = hibridoLigero;
     }
 
     // Getters y setters
-    public String getTipo() {
-        return tipo;
+    public TipoCombustible getTipoCombustible() {
+        return tipoCombustible;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setTipoCombustible(TipoCombustible tipoCombustible) {
+        this.tipoCombustible = tipoCombustible;
     }
 
     public Integer getAutonomia() {
