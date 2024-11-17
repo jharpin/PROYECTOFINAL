@@ -6,14 +6,14 @@ import java.util.List;
 public class Empleado extends Persona {
     private String rol;
     private List<Transaccion> transaccionesRealizadas;
-    private String credencialesAcceso;
+   
 
     // Constructor
-    public Empleado(String nombre, int identificacion, String direccion, String telefono, String rol, String credencialesAcceso) {
+    public Empleado(String nombre, int identificacion, String direccion, String telefono, String rol) {
         super(nombre, identificacion, direccion, telefono);
         this.rol = rol;
         this.transaccionesRealizadas = new ArrayList<>();
-        this.credencialesAcceso = credencialesAcceso;
+        
     }
 
     // Métodos
@@ -54,18 +54,12 @@ public class Empleado extends Persona {
         this.transaccionesRealizadas = transaccionesRealizadas;
     }
 
-    public String getCredencialesAcceso() {
-        return credencialesAcceso;
-    }
-
-    public void setCredencialesAcceso(String credencialesAcceso) {
-        this.credencialesAcceso = credencialesAcceso;
-    }
+   
 
     @Override
     public String toString() {
-        return "Empleado [rol=" + rol + ", transaccionesRealizadas=" + transaccionesRealizadas + ", credencialesAcceso="
-                + credencialesAcceso + "]";
+        return "Empleado [rol=" + rol + ", transaccionesRealizadas=" + transaccionesRealizadas 
+                + "]";
     }
     
 }

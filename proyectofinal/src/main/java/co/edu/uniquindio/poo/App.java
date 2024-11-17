@@ -6,6 +6,31 @@ package co.edu.uniquindio.poo;
  */
 public class App {
     public static void main(String[] args) {
-        System.out.println("vamons equipo");
+        Empresa empresa =  new Empresa("TuCarroUQ");
+
+
+        
+
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
+
+
+    
 }
