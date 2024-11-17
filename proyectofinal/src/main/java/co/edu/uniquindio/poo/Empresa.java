@@ -59,6 +59,14 @@ public class Empresa {
     public List<Transaccion> getTransacciones() {
         return transacciones;
     }
+
+    @Override
+    public String toString() {
+        return "Empresa [nombre=" + nombre + ", clientes=" + clientes + ", empleados=" + empleados + ", vehiculos="
+                + vehiculos + ", transacciones=" + transacciones + "]";
+    }
+
+    
 }
 
 

@@ -61,4 +61,11 @@ public class Empleado extends Persona {
     public void setCredencialesAcceso(String credencialesAcceso) {
         this.credencialesAcceso = credencialesAcceso;
     }
+
+    @Override
+    public String toString() {
+        return "Empleado [rol=" + rol + ", transaccionesRealizadas=" + transaccionesRealizadas + ", credencialesAcceso="
+                + credencialesAcceso + "]";
+    }
+    
 }

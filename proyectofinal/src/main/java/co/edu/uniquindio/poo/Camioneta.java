@@ -131,5 +131,17 @@ public class Camioneta extends Vehiculo {
     public void setTraccion4x4(boolean traccion4x4) {
         this.traccion4x4 = traccion4x4;
     }
+
+    @Override
+    public String toString() {
+        return "Camioneta [numeroPasajeros=" + numeroPasajeros + ", numeroPuertas=" + numeroPuertas
+                + ", capacidadMaletero=" + capacidadMaletero + ", aireAcondicionado=" + aireAcondicionado
+                + ", camaraReversa=" + camaraReversa + ", velocidadCrucero=" + velocidadCrucero + ", bolsasDeAire="
+                + bolsasDeAire + ", ABS=" + ABS + ", sensoresColision=" + sensoresColision + ", sensorTraficoCruzado="
+                + sensorTraficoCruzado + ", asistentePermanenciaCarril=" + asistentePermanenciaCarril + ", traccion4x4="
+                + traccion4x4 + "]";
+    }
+    
 }
+
 

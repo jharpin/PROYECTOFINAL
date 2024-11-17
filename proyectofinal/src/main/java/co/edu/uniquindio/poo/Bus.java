@@ -99,4 +99,13 @@ public class Bus extends Vehiculo {
     public void setSalidasEmergencia(int salidasEmergencia) {
         this.salidasEmergencia = salidasEmergencia;
     }
+
+    @Override
+    public String toString() {
+        return "Bus [numeroPasajeros=" + numeroPasajeros + ", numeroPuertas=" + numeroPuertas + ", capacidadMaletero="
+                + capacidadMaletero + ", aireAcondicionado=" + aireAcondicionado + ", camaraReversa=" + camaraReversa
+                + ", bolsasDeAire=" + bolsasDeAire + ", ABS=" + ABS + ", numeroEjes=" + numeroEjes
+                + ", salidasEmergencia=" + salidasEmergencia + "]";
+    }
+    
 }

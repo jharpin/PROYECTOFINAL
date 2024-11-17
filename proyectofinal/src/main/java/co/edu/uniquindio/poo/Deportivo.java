@@ -58,4 +58,11 @@ public class Deportivo extends Vehiculo {
     public void setTiempo0a100kmh(double tiempo0a100kmh) {
         this.tiempo0a100kmh = tiempo0a100kmh;
     }
+
+    @Override
+    public String toString() {
+        return "Deportivo [numeroPasajeros=" + numeroPasajeros + ", numeroPuertas=" + numeroPuertas + ", bolsasDeAire="
+                + bolsasDeAire + ", caballosDeFuerza=" + caballosDeFuerza + ", tiempo0a100kmh=" + tiempo0a100kmh + "]";
+    }
+    
 }

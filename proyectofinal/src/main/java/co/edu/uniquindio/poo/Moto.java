@@ -38,5 +38,13 @@ public class Moto extends Vehiculo {
     public void setTipoMoto(TipoMoto tipoMoto) {
         this.tipoMoto = tipoMoto;
     }
+
+    @Override
+    public String toString() {
+        return "Moto [cilindraje=" + cilindraje + ", velocidadMaxima=" + velocidadMaxima + ", tipoMoto=" + tipoMoto
+                + "]";
+    }
+
+    
 }
 

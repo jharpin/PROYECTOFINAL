@@ -48,5 +48,13 @@ public class Transaccion {
     public void setVehiculo(Vehiculo vehiculo) {
         this.vehiculo = vehiculo;
     }
+
+    @Override
+    public String toString() {
+        return "Transaccion [fecha=" + fecha + ", empleado=" + empleado + ", cliente=" + cliente + ", vehiculo="
+                + vehiculo + "]";
+    }
+
+    
 }
 

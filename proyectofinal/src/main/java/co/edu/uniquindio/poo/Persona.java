@@ -47,6 +47,14 @@ package co.edu.uniquindio.poo;
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
+    @Override
+    public String toString() {
+        return "Persona [nombre=" + nombre + ", identificacion=" + identificacion + ", direccion=" + direccion
+                + ", telefono=" + telefono + "]";
+    }
+
+    
 }
  
     

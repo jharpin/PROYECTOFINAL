@@ -79,4 +79,14 @@ public class Van extends Vehiculo {
     public void setABS(boolean ABS) {
         this.ABS = ABS;
     }
+
+    @Override
+    public String toString() {
+        return "Van [numeroPasajeros=" + numeroPasajeros + ", numeroPuertas=" + numeroPuertas + ", capacidadMaletero="
+                + capacidadMaletero + ", aireAcondicionado=" + aireAcondicionado + ", camaraReversa=" + camaraReversa
+                + ", bolsasDeAire=" + bolsasDeAire + ", ABS=" + ABS + "]";
+    }
+
+
+    
 }

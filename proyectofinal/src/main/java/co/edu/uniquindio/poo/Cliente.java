@@ -35,4 +35,10 @@ public class Cliente extends Persona {
     public void setHistorialDeTransacciones(List<Transaccion> historialDeTransacciones) {
         this.historialDeTransacciones = historialDeTransacciones;
     }
+
+    @Override
+    public String toString() {
+        return "Cliente [email=" + email + ", historialDeTransacciones=" + historialDeTransacciones + "]";
+    }
+    
 }
