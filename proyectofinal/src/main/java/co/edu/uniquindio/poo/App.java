@@ -18,8 +18,7 @@ public class App {
         System.out.println("\n=== Funciones ===");
         bloquearDesbloquearUsuario(empresa, "empleado1");
         recuperarContrasena(empresa, "empleado2", "Hamburguesa");
-        gestionarAlquiler(empresa);
-        registrarVenta(empresa);
+        realizarFuncionesEmpleado(empresa);
     }
 
     private static void inicializarDatos(Empresa empresa) {
@@ -57,15 +56,6 @@ public class App {
 
         Deportivo deportivo = new Deportivo("Porsche", "Nuevo", "911", "ABC987", 7, 320.0, 3.0, "Gasolina", false, 2, 2, 6, 450.0, 3.5);
         empresa.getListaVehiculos().add(deportivo);
-
-        // Crear alquiler
-        Alquiler alquiler = new Alquiler(1, sedan, cliente1, empleado1, 75000, LocalDate.of(2024, 1, 12), LocalDate.of(2024, 4, 11),
-                Alquiler.calcularTotalAlquiler(75000, LocalDate.of(2024, 1, 12), LocalDate.of(2024, 4, 11)));
-        empresa.getListaAlquileres().add(alquiler);
-
-        // Crear venta
-        Venta venta = new Venta(1, deportivo, cliente2, empleado2, 250430250, LocalDate.of(2024, 2, 20));
-        empresa.getListaVentas().add(venta);
     }
 
     private static void mostrarDatos(Empresa empresa) {
@@ -79,11 +69,9 @@ public class App {
 
     private static void bloquearDesbloquearUsuario(Empresa empresa, String nombreUsuario) {
         try {
-            // Bloquear usuario
             empresa.bloquearUsuario(nombreUsuario);
             System.out.println("Usuario bloqueado: " + nombreUsuario);
 
-            // Desbloquear usuario
             empresa.desbloquearUsuario(nombreUsuario);
             System.out.println("Usuario desbloqueado: " + nombreUsuario);
         } catch (IllegalArgumentException e) {
@@ -100,36 +88,31 @@ public class App {
         }
     }
 
-    private static void gestionarAlquiler(Empresa empresa) {
-        try {
-            Cliente cliente = empresa.getListaClientes().get(0);
-            Empleado empleado = empresa.getListaEmpleados().get(0);
-            Vehiculo vehiculo = empresa.getListaVehiculos().get(0);
+    private static void realizarFuncionesEmpleado(Empresa empresa) {
+        Empleado empleado1 = empresa.getListaEmpleados().get(0); // David
+        Empleado empleado2 = empresa.getListaEmpleados().get(1); // Marcelo
 
-            Alquiler alquiler = new Alquiler(2, vehiculo, cliente, empleado, 80000,
-                    LocalDate.of(2024, 6, 1), LocalDate.of(2024, 6, 10),
-                    Alquiler.calcularTotalAlquiler(80000, LocalDate.of(2024, 6, 1), LocalDate.of(2024, 6, 10)));
+        // Registrar un vehículo
+        Vehiculo nuevoVehiculo = new Sedan("Nissan", "Usado", "Sentra", "XYZ456", 6, 200.0, 2.0, "Gasolina", true, 5, 4, 500.0, true, true, true, 6, true, true, true, true);
+        empleado1.registrarVehiculo(empresa, nuevoVehiculo);
 
-            empresa.getListaAlquileres().add(alquiler);
-            System.out.println("Nuevo alquiler registrado: " + alquiler);
+        // Registrar un cliente
+        Cliente nuevoCliente = new Cliente(3, "Camila", "Lopez", "1080456789", 28, "camila@gmail.com", "3124567890", Rol.CLIENTE.toString(),
+                new Usuario("cliente3", "camila123", "Perro", PreguntasSeguridad.COLOR_FAVORITO ));
+        empleado1.registrarCliente(empresa, nuevoCliente);
 
-        } catch (Exception e) {
-            System.out.println("Error al gestionar alquiler: " + e.getMessage());
-        }
-    }
+        // Realizar un alquiler
+        Cliente cliente1 = empresa.getListaClientes().get(0); // Laura
+        Vehiculo vehiculoAlquiler = empresa.getListaVehiculos().get(0); // Toyota Corolla
+        empleado1.realizarAlquiler(empresa, cliente1, vehiculoAlquiler, LocalDate.of(2024, 6, 1), LocalDate.of(2024, 6, 10), 80000);
 
-    private static void registrarVenta(Empresa empresa) {
-        try {
-            Cliente cliente = empresa.getListaClientes().get(1);
-            Empleado empleado = empresa.getListaEmpleados().get(1);
-            Vehiculo vehiculo = empresa.getListaVehiculos().get(1);
+        // Registrar una venta
+        Cliente cliente2 = empresa.getListaClientes().get(1); // Steban
+        Vehiculo vehiculoVenta = empresa.getListaVehiculos().get(1); // Porsche 911
+        empleado2.registrarVenta(empresa, cliente2, vehiculoVenta, 350000000);
 
-            Venta venta = new Venta(2, vehiculo, cliente, empleado, 350000000, LocalDate.of(2024, 7, 15));
-            empresa.getListaVentas().add(venta);
-            System.out.println("Nueva venta registrada: " + venta);
-
-        } catch (Exception e) {
-            System.out.println("Error al registrar venta: " + e.getMessage());
-        }
+        // Comprar un vehículo
+        Vehiculo vehiculoCompra = new Sedan("Mazda", "Usado", "Mazda 3", "LMN123", 7, 220.0, 1.8, "Gasolina", true, 5, 4, 450.0, true, true, true, 6, true, true, true, true);
+        empleado2.comprarVehiculo(empresa, cliente2, vehiculoCompra);
     }
 }

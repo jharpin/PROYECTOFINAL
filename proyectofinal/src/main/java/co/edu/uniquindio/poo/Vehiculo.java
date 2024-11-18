@@ -2,14 +2,14 @@ package co.edu.uniquindio.poo;
 
 public abstract class Vehiculo {
     private String marca;
-    private String estado;
+    private String estado; // Ejemplo: "Nuevo", "Usado"
     private String modelo;
     private String placa;
     private int cambios;
-    private double velocidadMaxima;
-    private double cilindraje;
-    private String combustible;
-    private boolean transmisionAutomatica;
+    private double velocidadMaxima; // Velocidad máxima en km/h
+    private double cilindraje; // Tamaño del motor
+    private String combustible; // Ejemplo: "Gasolina", "Diesel", "Eléctrico"
+    private boolean transmisionAutomatica; // Automática o Manual
 
     public Vehiculo(String marca, String estado, String modelo, String placa,
                     int cambios, double velocidadMaxima,
@@ -25,8 +25,7 @@ public abstract class Vehiculo {
         this.transmisionAutomatica = transmisionAutomatica;
     }
 
-    public Vehiculo(){
-
+    public Vehiculo() {
     }
 
     public String getMarca() {
@@ -41,14 +40,6 @@ public abstract class Vehiculo {
         return estado;
     }
 
-    public String getPlaca() {
-        return placa;
-    }
-
-    public void setPlaca(String placa) {
-        this.placa = placa;
-    }
-
     public void setEstado(String estado) {
         this.estado = estado;
     }
@@ -59,6 +50,14 @@ public abstract class Vehiculo {
 
     public void setModelo(String modelo) {
         this.modelo = modelo;
+    }
+
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
     }
 
     public int getCambios() {
@@ -101,12 +100,27 @@ public abstract class Vehiculo {
         this.transmisionAutomatica = transmisionAutomatica;
     }
 
+    // Método para determinar si la revisión técnica está aprobada
+    public boolean isRevisionTecnicaAprobada() {
+        // La revisión técnica es aprobada si:
+        // - El vehículo está en buen estado ("Nuevo" o "Usado").
+        // - La velocidad máxima no supera 300 km/h.
+        // - El cilindraje es mayor a 1.0 (ejemplo: motores muy pequeños no cumplen).
+        // - Combustibles aceptados: "Gasolina", "Diesel". "Eléctrico" no pasa por ejemplo.
+
+        return (estado.equalsIgnoreCase("Nuevo") || estado.equalsIgnoreCase("Usado"))
+                && velocidadMaxima <= 300
+                && cilindraje > 1.0
+                && (combustible.equalsIgnoreCase("Gasolina") || combustible.equalsIgnoreCase("Diesel"));
+    }
+
     @Override
     public String toString() {
         return "Vehiculo{" +
                 "marca='" + marca + '\'' +
-                ", estado=" + estado +
+                ", estado='" + estado + '\'' +
                 ", modelo='" + modelo + '\'' +
+                ", placa='" + placa + '\'' +
                 ", cambios=" + cambios +
                 ", velocidadMaxima=" + velocidadMaxima +
                 ", cilindraje=" + cilindraje +
