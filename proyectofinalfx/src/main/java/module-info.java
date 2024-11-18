@@ -4,13 +4,9 @@ module co.edu.uniquindio.poo {
     requires java.desktop;
     requires itextpdf;
     requires org.jfree.jfreechart;
-    requires org.junit.jupiter.engine;
-    requires org.junit.jupiter.api;
-    requires org.testng;
-
 
     opens co.edu.uniquindio.poo to javafx.fxml;
     opens co.edu.uniquindio.poo.viewcontroller to javafx.fxml;
     exports co.edu.uniquindio.poo;
-
 }
+
