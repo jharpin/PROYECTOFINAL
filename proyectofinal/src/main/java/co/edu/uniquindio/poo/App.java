@@ -1,187 +1,135 @@
 package co.edu.uniquindio.poo;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 public class App {
 
-    // Listas para almacenar los objetos creados
-    private static List<Usuario> listaUsuarios = new ArrayList<>();
-    private static List<Empleado> listaEmpleados = new ArrayList<>();
-    private static List<Cliente> listaClientes = new ArrayList<>();
-    private static List<Vehiculo> listaVehiculos = new ArrayList<>();
-    private static List<Alquiler> listaAlquileres = new ArrayList<>();
-    private static List<Venta> listaVentas = new ArrayList<>();
-    private static List<Administrador> listaAdministrador = new ArrayList<>();
-
     public static void main(String[] args) {
-        
-        // Crear Administrador
-        Administrador administrador = new Administrador();
-        administrador.setId(01);
-        administrador.setNombre("Amerika");
-        administrador.setApellido("Esmeralda");
-        administrador.setCedula("1080678932");
-        administrador.setEdad(20);
-        administrador.setCorreo("admin@gmail.com");
-        administrador.setTelefono("3007506643");
-        administrador.setRol(Rol.ADMINISTRADOR.toString());
+        Empresa empresa = Empresa.getInstancia();
 
-        Usuario adminUsuario = new Usuario();
-        adminUsuario.setNombreUsuario("admin");
-        adminUsuario.setContrasena("admin123");
-        administrador.setUsuario(adminUsuario);
-        
-        listaAdministrador.add(administrador);
-        listaUsuarios.add(adminUsuario);
+        // Inicializar datos iniciales
+        inicializarDatos(empresa);
 
-        // Crear Empleado 1
-        Empleado empleado = new Empleado();
-        empleado.setId(1);
-        empleado.setNombre("David");
-        empleado.setApellido("Bedoya");
-        empleado.setCedula("1090456789");
-        empleado.setEdad(30);
-        empleado.setCorreo("david@gmail.com");
-        empleado.setTelefono("3017894562");
-        empleado.setRol(Rol.EMPLEADO.toString());
+        // Mostrar datos iniciales
+        System.out.println("=== Datos Iniciales ===");
+        mostrarDatos(empresa);
 
-        Usuario empleadoUsuario = new Usuario();
-        empleadoUsuario.setNombreUsuario("empleado1");
-        empleadoUsuario.setContrasena("empleado123");
-        empleadoUsuario.setPreguntasSeguridad(PreguntasSeguridad.COLOR_FAVORITO);
-        empleadoUsuario.setPalabraSecreta("Verde");
-        empleado.setUsuario(empleadoUsuario);
-        
-        listaEmpleados.add(empleado);
-        listaUsuarios.add(empleadoUsuario);
+        // Funcionalidades avanzadas
+        System.out.println("\n=== Funciones ===");
+        bloquearDesbloquearUsuario(empresa, "empleado1");
+        recuperarContrasena(empresa, "empleado2", "Hamburguesa");
+        gestionarAlquiler(empresa);
+        registrarVenta(empresa);
+    }
 
-        // Crear Empleado 2
-        Empleado empleado2 = new Empleado();
-        empleado2.setId(2);
-        empleado2.setNombre("Marcelo");
-        empleado2.setApellido("Rodriguez");
-        empleado2.setCedula("1095678341");
-        empleado2.setEdad(22);
-        empleado2.setCorreo("marcelo@gmail.com");
-        empleado2.setTelefono("3143245677");
-        empleado2.setRol(Rol.EMPLEADO.toString());
+    private static void inicializarDatos(Empresa empresa) {
+        // Crear administrador
+        Administrador administrador = new Administrador(1, "Amerika", "Esmeralda", "1080678932", 20, "admin@gmail.com", "3007506643", Rol.ADMINISTRADOR.toString(),
+                new Usuario("admin", "admin123", "esmeralda", PreguntasSeguridad.CIUDAD_NACIMIENTO));
+        empresa.getListaAdministrador().add(administrador);
+        empresa.getListaUsuarios().add(administrador.getUsuario());
 
-        Usuario empleadoUsuario2 = new Usuario();
-        empleadoUsuario2.setNombreUsuario("empleado2");
-        empleadoUsuario2.setContrasena("empleado321");
-        empleadoUsuario2.setPreguntasSeguridad(PreguntasSeguridad.COMIDA_FAVORITA);
-        empleadoUsuario2.setPalabraSecreta("Hamburguesa");
-        empleado2.setUsuario(empleadoUsuario2);
-        
-        listaEmpleados.add(empleado2);
-        listaUsuarios.add(empleadoUsuario2);
+        // Crear empleados
+        Empleado empleado1 = new Empleado(1, "David", "Bedoya", "1090456789", 30, "david@gmail.com", "3017894562", Rol.EMPLEADO.toString(),
+                new Usuario("empleado1", "empleado123", "Verde", PreguntasSeguridad.COLOR_FAVORITO));
+        empresa.getListaEmpleados().add(empleado1);
+        empresa.getListaUsuarios().add(empleado1.getUsuario());
 
-        // Crear Cliente 1
-        Cliente cliente = new Cliente();
-        cliente.setId(1);
-        cliente.setNombre("Laura");
-        cliente.setApellido("Martínez");
-        cliente.setCedula("1070954321");
-        cliente.setEdad(25);
-        cliente.setCorreo("cliente@gmail.com");
-        cliente.setTelefono("3023456789");
+        Empleado empleado2 = new Empleado(2, "Marcelo", "Rodriguez", "1095678341", 22, "marcelo@gmail.com", "3143245677", Rol.EMPLEADO.toString(),
+                new Usuario("empleado2", "empleado321", "Hamburguesa", PreguntasSeguridad.COMIDA_FAVORITA));
+        empresa.getListaEmpleados().add(empleado2);
+        empresa.getListaUsuarios().add(empleado2.getUsuario());
 
-        Usuario clienteUsuario = new Usuario();
-        clienteUsuario.setNombreUsuario("cliente1");
-        clienteUsuario.setContrasena("cliente123");
-        clienteUsuario.setPreguntasSeguridad(PreguntasSeguridad.DEPORTE_FAVORITO);
-        clienteUsuario.setPalabraSecreta("Tenis");
-        cliente.setUsuario(clienteUsuario);
+        // Crear clientes
+        Cliente cliente1 = new Cliente(1, "Laura", "Martínez", "1070954321", 25, "cliente@gmail.com", "3023456789", Rol.CLIENTE.toString(),
+                new Usuario("cliente1", "cliente123", "Tenis", PreguntasSeguridad.DEPORTE_FAVORITO));
+        empresa.getListaClientes().add(cliente1);
+        empresa.getListaUsuarios().add(cliente1.getUsuario());
 
-        listaClientes.add(cliente);
-        listaUsuarios.add(clienteUsuario);
-
-        // Crear Cliente 2
-        Cliente cliente2 = new Cliente();
-        cliente2.setId(2);
-        cliente2.setNombre("Steban");
-        cliente2.setApellido("Martínez");
-        cliente2.setCedula("1098675433");
-        cliente2.setEdad(31);
-        cliente2.setCorreo("steban@gmail.com");
-        cliente2.setTelefono("3123456789");
-
-        Usuario clienteUsuario2 = new Usuario();
-        clienteUsuario2.setNombreUsuario("cliente2");
-        clienteUsuario2.setContrasena("cliente321");
-        clienteUsuario2.setPreguntasSeguridad(PreguntasSeguridad.CIUDAD_NACIMIENTO);
-        clienteUsuario2.setPalabraSecreta("Armenia");
-        cliente2.setUsuario(clienteUsuario2);
-
-        listaClientes.add(cliente2);
-        listaUsuarios.add(clienteUsuario2);
+        Cliente cliente2 = new Cliente(2, "Steban", "Martínez", "1098675433", 31, "steban@gmail.com", "3123456789", Rol.CLIENTE.toString(),
+                new Usuario("cliente2", "cliente321", "Armenia", PreguntasSeguridad.CIUDAD_NACIMIENTO));
+        empresa.getListaClientes().add(cliente2);
+        empresa.getListaUsuarios().add(cliente2.getUsuario());
 
         // Crear vehículos
         Sedan sedan = new Sedan("Toyota", "Nuevo", "Corolla", "AMJ123", 6, 180.0, 1.8, "gasolina", true, 5, 4, 470.0, true, true, true, 6, true, true, true, true);
-        listaVehiculos.add(sedan);
+        empresa.getListaVehiculos().add(sedan);
 
         Deportivo deportivo = new Deportivo("Porsche", "Nuevo", "911", "ABC987", 7, 320.0, 3.0, "Gasolina", false, 2, 2, 6, 450.0, 3.5);
-        listaVehiculos.add(deportivo);
+        empresa.getListaVehiculos().add(deportivo);
 
-        // Crear Alquiler
-        Alquiler alquiler = new Alquiler();
-        alquiler.setIdAlquiler(1);
-        alquiler.setPrecioPorDia(75000);
-        alquiler.setCliente(cliente);
-        alquiler.setEmpleado(empleado);
-        alquiler.setVehiculo(sedan);
-        alquiler.setFechaInicio(LocalDate.of(2024, 1, 12));
-        alquiler.setFechaFin(LocalDate.of(2024, 4, 11));
-        alquiler.setTotal(calcularTotalAlquiler(alquiler));
+        // Crear alquiler
+        Alquiler alquiler = new Alquiler(1, sedan, cliente1, empleado1, 75000, LocalDate.of(2024, 1, 12), LocalDate.of(2024, 4, 11),
+                Alquiler.calcularTotalAlquiler(75000, LocalDate.of(2024, 1, 12), LocalDate.of(2024, 4, 11)));
+        empresa.getListaAlquileres().add(alquiler);
 
-        listaAlquileres.add(alquiler);
-
-        // Crear Venta
-        Venta venta = new Venta();
-        venta.setIdVenta(1);
-        venta.setCliente(cliente2);
-        venta.setEmpleado(empleado2);
-        venta.setVehiculo(deportivo);
-        venta.setFecha(LocalDate.of(2024, 2, 20));
-        venta.setPrecio(250430250);
-
-        listaVentas.add(venta);
-
-        // Imprimir los datos para verificar
-        System.out.println("Administradores: " + listaAdministrador);
-        System.out.println("Empleados: " + listaEmpleados);
-        System.out.println("Clientes: " + listaClientes);
-        System.out.println("Vehículos: " + listaVehiculos);
-        System.out.println("Alquileres: " + listaAlquileres);
-        System.out.println("Ventas: " + listaVentas);
+        // Crear venta
+        Venta venta = new Venta(1, deportivo, cliente2, empleado2, 250430250, LocalDate.of(2024, 2, 20));
+        empresa.getListaVentas().add(venta);
     }
 
-    // Método para calcular el total de un alquiler (ejemplo simple)
-    public static double calcularTotalAlquiler(Alquiler alquiler) {
-        long dias = java.time.temporal.ChronoUnit.DAYS.between(alquiler.getFechaInicio(), alquiler.getFechaFin());
-        return alquiler.getPrecioPorDia() * dias;
+    private static void mostrarDatos(Empresa empresa) {
+        System.out.println("Administradores: " + empresa.getListaAdministrador());
+        System.out.println("Empleados: " + empresa.getListaEmpleados());
+        System.out.println("Clientes: " + empresa.getListaClientes());
+        System.out.println("Vehículos: " + empresa.getListaVehiculos());
+        System.out.println("Alquileres: " + empresa.getListaAlquileres());
+        System.out.println("Ventas: " + empresa.getListaVentas());
     }
 
+    private static void bloquearDesbloquearUsuario(Empresa empresa, String nombreUsuario) {
+        try {
+            // Bloquear usuario
+            empresa.bloquearUsuario(nombreUsuario);
+            System.out.println("Usuario bloqueado: " + nombreUsuario);
 
-
-
-
-    // Bloquear un cliente por su cédula
-    boolean resultado = empresa.bloquearCliente("1070954321");
-    if (resultado) {
-        System.out.println("Cliente bloqueado exitosamente.");
-    } else {
-        System.out.println("No se encontró el cliente.");
+            // Desbloquear usuario
+            empresa.desbloquearUsuario(nombreUsuario);
+            System.out.println("Usuario desbloqueado: " + nombreUsuario);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
     }
 
-    // Desbloquear un cliente por su cédula
-    resultado = empresa.desbloquearCliente("1070954321");
-    if (resultado) {
-        System.out.println("Cliente desbloqueado exitosamente.");
-    } else {
-        System.out.println("No se encontró el cliente.");
+    private static void recuperarContrasena(Empresa empresa, String nombreUsuario, String palabraSecreta) {
+        try {
+            String contrasena = empresa.recuperarContrasena(nombreUsuario, palabraSecreta);
+            System.out.println("Contraseña recuperada para " + nombreUsuario + ": " + contrasena);
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
     }
 
+    private static void gestionarAlquiler(Empresa empresa) {
+        try {
+            Cliente cliente = empresa.getListaClientes().get(0);
+            Empleado empleado = empresa.getListaEmpleados().get(0);
+            Vehiculo vehiculo = empresa.getListaVehiculos().get(0);
+
+            Alquiler alquiler = new Alquiler(2, vehiculo, cliente, empleado, 80000,
+                    LocalDate.of(2024, 6, 1), LocalDate.of(2024, 6, 10),
+                    Alquiler.calcularTotalAlquiler(80000, LocalDate.of(2024, 6, 1), LocalDate.of(2024, 6, 10)));
+
+            empresa.getListaAlquileres().add(alquiler);
+            System.out.println("Nuevo alquiler registrado: " + alquiler);
+
+        } catch (Exception e) {
+            System.out.println("Error al gestionar alquiler: " + e.getMessage());
+        }
+    }
+
+    private static void registrarVenta(Empresa empresa) {
+        try {
+            Cliente cliente = empresa.getListaClientes().get(1);
+            Empleado empleado = empresa.getListaEmpleados().get(1);
+            Vehiculo vehiculo = empresa.getListaVehiculos().get(1);
+
+            Venta venta = new Venta(2, vehiculo, cliente, empleado, 350000000, LocalDate.of(2024, 7, 15));
+            empresa.getListaVentas().add(venta);
+            System.out.println("Nueva venta registrada: " + venta);
+
+        } catch (Exception e) {
+            System.out.println("Error al registrar venta: " + e.getMessage());
+        }
+    }
 }

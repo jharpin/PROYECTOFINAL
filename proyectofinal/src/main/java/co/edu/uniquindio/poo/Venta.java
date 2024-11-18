@@ -73,13 +73,13 @@ public class Venta {
 
     @Override
     public String toString() {
-        return "Venta{" +
-                "idVenta=" + idVenta +
-                "vehiculo=" + vehiculo +
-                ", cliente=" + cliente +
-                ", empleado=" + empleado +
-                ", precio=" + precio +
-                ", fecha=" + fecha +
+        return "Venta {" +
+                "ID Venta=" + idVenta +
+                ", Vehículo=" + vehiculo +
+                ", Cliente=" + cliente.getNombre() + " " + cliente.getApellido() +
+                ", Empleado=" + empleado.getNombre() + " " + empleado.getApellido() +
+                ", Precio=" + precio +
+                ", Fecha=" + fecha +
                 '}';
     }
 }

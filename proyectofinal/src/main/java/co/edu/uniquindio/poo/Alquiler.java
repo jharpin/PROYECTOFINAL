@@ -1,7 +1,7 @@
 package co.edu.uniquindio.poo;
 
 import java.time.LocalDate;
-
+import java.time.temporal.ChronoUnit;
 
 public class Alquiler {
 
@@ -14,10 +14,10 @@ public class Alquiler {
     private LocalDate fechaFin;
     private double total;
 
-    public Alquiler(){
-
+    public Alquiler() {
     }
-    public Alquiler(int idAlquiler,Vehiculo vehiculo, Cliente cliente, Empleado empleado, double precioPorDia, LocalDate fechaInicio, LocalDate fechaFin, Double total) {
+
+    public Alquiler(int idAlquiler, Vehiculo vehiculo, Cliente cliente, Empleado empleado, double precioPorDia, LocalDate fechaInicio, LocalDate fechaFin, Double total) {
         this.idAlquiler = idAlquiler;
         this.vehiculo = vehiculo;
         this.cliente = cliente;
@@ -92,20 +92,23 @@ public class Alquiler {
         this.fechaFin = fechaFin;
     }
 
+    public static double calcularTotalAlquiler(double precioPorDia, LocalDate inicio, LocalDate fin) {
+        long dias = ChronoUnit.DAYS.between(inicio, fin);
+        return precioPorDia * dias;
+    }
+
 
     @Override
-    public String toString() {
-        return "Alquiler{" +
-                "idAlquiler=" + idAlquiler +
-                "vehiculo=" + vehiculo +
-                ", cliente=" + cliente +
-                ", empleado=" + empleado +
-                ", precioPorDia=" + precioPorDia +
-                ", fechaInicio=" + fechaInicio +
-                ", fechaFin=" + fechaFin +
-                ", total=" + total +
-                '}';
-    }
+public String toString() {
+    return "Alquiler {" +
+            "ID Alquiler=" + idAlquiler +
+            ", Vehículo=" + vehiculo +
+            ", Cliente=" + cliente.getNombre() + " " + cliente.getApellido() +
+            ", Empleado=" + empleado.getNombre() + " " + empleado.getApellido() +
+            ", Precio por Día=" + precioPorDia +
+            ", Fecha Inicio=" + fechaInicio +
+            ", Fecha Fin=" + fechaFin +
+            ", Total=" + total +
+            '}';
 }
-
-
+}
