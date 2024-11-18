@@ -1,4 +1,4 @@
-module co.edu.uniquindio.proyecto_final.tucarro {
+module co.edu.uniquindio.poo {
     requires javafx.controls;
     requires javafx.fxml;
     requires java.desktop;
@@ -9,7 +9,7 @@ module co.edu.uniquindio.proyecto_final.tucarro {
     requires org.testng;
 
 
-    opens co.edu.uniquindio.poo.tucarro to javafx.fxml;
+    opens co.edu.uniquindio.poo to javafx.fxml;
     opens co.edu.uniquindio.poo.viewcontroller to javafx.fxml;
     exports co.edu.uniquindio.poo;
 
