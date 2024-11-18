@@ -79,10 +79,7 @@ public class App {
         System.out.println(empresa.getListaClientes());
         System.out.println("\n=== Vehículos ===");
         System.out.println(empresa.getListaVehiculos());
-        System.out.println("\n=== Alquileres ===");
-        System.out.println(empresa.getListaAlquileres());
-        System.out.println("\n=== Ventas ===");
-        System.out.println(empresa.getListaVentas());
+        
     }
 
     /**
@@ -160,5 +157,11 @@ public class App {
         Vehiculo vehiculoCompra = new Sedan("Mazda", "Usado", "Mazda 3", "LMN123", 7, 220.0, 1.8, "Gasolina", true, 5, 4, 450.0, true, true, true, 6, true, true, true, true);
         empleado2.comprarVehiculo(empresa, cliente2, vehiculoCompra);
         System.out.println("\n Vehículo comprado: " + vehiculoCompra);
+
+        System.out.println("\n=== Alquileres ===");
+        System.out.println(empresa.getListaAlquileres());
+        System.out.println("\n=== Ventas ===");
+        System.out.println(empresa.getListaVentas());
     }
+
 }
