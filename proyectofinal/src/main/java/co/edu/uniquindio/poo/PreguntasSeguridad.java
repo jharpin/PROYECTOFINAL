@@ -8,10 +8,12 @@ package co.edu.uniquindio.poo;
 public enum PreguntasSeguridad {
 
     // Definición de las preguntas de seguridad posibles
-    COLOR_FAVORITO("¿Cuál es tu color favorito?"),
-    CIUDAD_NACIMIENTO("¿En qué ciudad naciste?"),
-    COMIDA_FAVORITA("¿Cuál es tu comida favorita?"),
-    DEPORTE_FAVORITO("¿Cuál es tu deporte favorito?");
+    ANIMALFAVORITO("¿CUAL ES TU ANIMAL FAVORITO ?"),
+    MATERIAFAVORITA("¿ CUAKL ES TU MATERI AFAVORITA  ?"),
+    ACTIVIDADPREFERIDA("¿CUAL ES TU ACTIVIDAD PREFERIDA?"),
+    CUALESTUPIRMERAMASCOTA("¿ CUAL FUE TU PRIMERA MASCOTA ?");
+    
+    
 
     // Atributo que almacena la pregunta asociada a cada valor del enum
     private final String pregunta;
