@@ -218,6 +218,36 @@ public abstract class Vehiculo {
         this.transmisionAutomatica = transmisionAutomatica;
     }
 
+
+    // Método para determinar si la revisión técnica está aprobada
+    public boolean isRevisionTecnicaAprobada() {
+        // La revisión técnica es aprobada si:
+        // - El vehículo está en buen estado ("Nuevo" o "Usado").
+        // - La velocidad máxima no supera 300 km/h.
+        // - El cilindraje es mayor a 1.0 (ejemplo: motores muy pequeños no cumplen).
+        // - Combustibles aceptados: "Gasolina", "Diesel". "Eléctrico" no pasa por ejemplo.
+
+        return (estado.equalsIgnoreCase("Nuevo") || estado.equalsIgnoreCase("Usado"))
+                && velocidadMaxima <= 300
+                && cilindraje > 1.0
+                && (combustible.equalsIgnoreCase("Gasolina") || combustible.equalsIgnoreCase("Diesel"));
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /**
      * Método toString que devuelve una representación en texto del vehículo.
      *
