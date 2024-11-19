@@ -25,29 +25,29 @@ public class App {
     private static void inicializarDatos(Empresa empresa) {
         // Crear administrador
         Administrador administrador = new Administrador(1, "Amerika", "Esmeralda", "1080678932", 20, "admin@gmail.com", "3007506643", Rol.ADMINISTRADOR.toString(),
-                new Usuario("admin", "admin123", "esmeralda", PreguntasSeguridad.CIUDAD_NACIMIENTO));
+                new Usuario("admin", "admin123", "CHISPAS", PreguntasSeguridad.CUALESTUPIRMERAMASCOTA));
         empresa.getListaAdministrador().add(administrador);
         empresa.getListaUsuarios().add(administrador.getUsuario());
 
         // Crear empleados
         Empleado empleado1 = new Empleado(1, "David", "Bedoya", "1090456789", 30, "david@gmail.com", "3017894562", Rol.EMPLEADO.toString(),
-                new Usuario("empleado1", "empleado123", "Verde", PreguntasSeguridad.COLOR_FAVORITO));
+                new Usuario("empleado1", "empleado123", "CALCULO", PreguntasSeguridad.MATERIAFAVORITA));
         empresa.getListaEmpleados().add(empleado1);
         empresa.getListaUsuarios().add(empleado1.getUsuario());
 
-        Empleado empleado2 = new Empleado(2, "Marcelo", "Rodriguez", "1095678341", 22, "marcelo@gmail.com", "3143245677", Rol.EMPLEADO.toString(),
-                new Usuario("empleado2", "empleado321", "Hamburguesa", PreguntasSeguridad.COMIDA_FAVORITA));
+        Empleado empleado2 = new Empleado(2, "JEAN", "GALVEZ", "1095678341", 22, "marcelo@gmail.com", "3143245677", Rol.EMPLEADO.toString(),
+                new Usuario("empleado2", "empleado321", "CORRER ", PreguntasSeguridad.ACTIVIDADPREFERIDA));
         empresa.getListaEmpleados().add(empleado2);
         empresa.getListaUsuarios().add(empleado2.getUsuario());
 
         // Crear clientes
-        Cliente cliente1 = new Cliente(1, "Laura", "Martínez", "1070954321", 25, "cliente@gmail.com", "3023456789", Rol.CLIENTE.toString(),
-                new Usuario("cliente1", "cliente123", "Tenis", PreguntasSeguridad.DEPORTE_FAVORITO));
+        Cliente cliente1 = new Cliente(1, "FALSO", "CHAVEZ", "1070954321", 25, "cliente@gmail.com", "3023456789", Rol.CLIENTE.toString(),
+                new Usuario("cliente1", "cliente123", "GUA GUAU", PreguntasSeguridad.ANIMALFAVORITO));
         empresa.getListaClientes().add(cliente1);
         empresa.getListaUsuarios().add(cliente1.getUsuario());
 
-        Cliente cliente2 = new Cliente(2, "Steban", "Martínez", "1098675433", 31, "steban@gmail.com", "3123456789", Rol.CLIENTE.toString(),
-                new Usuario("cliente2", "cliente321", "Armenia", PreguntasSeguridad.CIUDAD_NACIMIENTO));
+        Cliente cliente2 = new Cliente(2, "JUAN ", "PEREZ", "109867653", 31, "steban@gmail.com", "3123456789", Rol.CLIENTE.toString(),
+                new Usuario("cliente2", "cliente321", " KIN KONG", PreguntasSeguridad.ANIMALFAVORITO));
         empresa.getListaClientes().add(cliente2);
         empresa.getListaUsuarios().add(cliente2.getUsuario());
 
